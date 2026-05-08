@@ -4,22 +4,22 @@ const ITEMS = [
   {
     icon: Cloud,
     title: 'Sin instalación',
-    desc: 'Funciona en cualquier navegador. Las actualizaciones son automáticas.',
+    desc: 'Funciona en cualquier navegador. Las actualizaciones son automáticas, sin que el comercio tenga que hacer nada.',
   },
   {
     icon: ShieldCheck,
     title: 'Datos seguros',
-    desc: 'Backups automáticos. Aislamiento total entre cuentas. Cifrado end-to-end.',
+    desc: 'Backups automáticos. Aislamiento total entre cuentas. Tu información nunca se mezcla con la de otro comercio.',
   },
   {
     icon: MessageCircle,
-    title: 'Soporte cercano',
-    desc: 'Respondemos por WhatsApp y mail. Sin tickets que se pierden.',
+    title: 'Cercanía real',
+    desc: 'Respondemos por WhatsApp y mail. Nada de tickets que se pierden ni soporte tercerizado en otra zona horaria.',
   },
   {
     icon: MapPin,
     title: 'Hecho en Argentina',
-    desc: 'Pensado para PyMEs argentinas. Cobramos en pesos, sin sorpresas con el dólar.',
+    desc: 'Pensado para PyMEs argentinas. Cobramos en pesos, sin sorpresas con el dólar ni costos de implementación ocultos.',
   },
 ];
 
@@ -27,22 +27,24 @@ export default function Differentiators() {
   return (
     <section className="py-28 px-6 bg-white">
       <div className="max-w-6xl mx-auto">
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="inline-block text-brand-600 text-xs font-bold uppercase tracking-[0.2em] mb-4">
-            Por qué TrankaSoft
-          </span>
-          <h2 className="font-display font-extrabold text-4xl md:text-5xl text-ink leading-[1.05]">
-            Software que no te complica<br />
-            la vida.
+        <div className="max-w-3xl mx-auto text-center mb-20">
+          <p className="eyebrow text-blue mb-4">— 03 / Por qué TrankaSoft</p>
+          <h2 className="font-display font-bold text-4xl md:text-6xl text-navy leading-[1.05] tracking-tight">
+            Software que no te<br />
+            <span className="brand-gradient-text">complica la vida.</span>
           </h2>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10">
           {ITEMS.map(({ icon: Icon, title, desc }) => (
             <div key={title}>
-              <Icon size={28} className="text-brand-500 mb-4" />
-              <h3 className="font-bold text-lg text-ink mb-2">{title}</h3>
-              <p className="text-muted text-sm leading-relaxed">{desc}</p>
+              <div className="w-12 h-12 rounded-xl bg-ice flex items-center justify-center mb-5">
+                <Icon size={22} className="text-blue" />
+              </div>
+              <h3 className="font-display font-bold text-xl text-navy mb-2 tracking-tight">
+                {title}
+              </h3>
+              <p className="text-slate text-sm leading-relaxed">{desc}</p>
             </div>
           ))}
         </div>

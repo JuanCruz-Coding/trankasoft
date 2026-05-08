@@ -71,16 +71,15 @@ const PLANS = [
 
 export default function Pricing() {
   return (
-    <section id="planes" className="py-28 px-6 bg-white border-y border-line">
+    <section id="planes" className="py-28 px-6 bg-ice">
       <div className="max-w-6xl mx-auto">
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="inline-block text-brand-600 text-xs font-bold uppercase tracking-[0.2em] mb-4">
-            Planes
-          </span>
-          <h2 className="font-display font-extrabold text-4xl md:text-5xl text-ink leading-[1.05] mb-5">
-            Simples, sin sorpresas.
+          <p className="eyebrow text-blue mb-4">— 05 / Planes</p>
+          <h2 className="font-display font-bold text-4xl md:text-6xl text-navy leading-[1.05] mb-5 tracking-tight">
+            Simples,<br />
+            <span className="brand-gradient-text">sin sorpresas.</span>
           </h2>
-          <p className="text-lg text-muted">
+          <p className="text-lg text-slate">
             Pagás mes a mes. Cancelás cuando quieras. Sin contrato, sin
             instalación, sin costo de implementación.
           </p>
@@ -92,31 +91,33 @@ export default function Pricing() {
               key={plan.code}
               className={`relative rounded-2xl p-7 flex flex-col ${
                 plan.highlight
-                  ? 'bg-ink text-white'
+                  ? 'bg-navy text-white shadow-2xl shadow-navy/20'
                   : 'bg-white border border-line'
               }`}
             >
               {plan.highlight && (
-                <span className="absolute -top-3 left-7 bg-brand-500 text-white text-[10px] font-bold uppercase tracking-[0.15em] px-2.5 py-1 rounded">
+                <span className="absolute -top-3 left-7 bg-orange text-white text-[10px] font-bold uppercase tracking-[0.15em] px-2.5 py-1 rounded">
                   Más elegido
                 </span>
               )}
 
               <h3
-                className={`font-bold text-lg mb-1 ${plan.highlight ? 'text-white' : 'text-ink'}`}
+                className={`font-display font-bold text-xl mb-1 tracking-tight ${plan.highlight ? 'text-white' : 'text-navy'}`}
               >
                 {plan.name}
               </h3>
               <p
-                className={`text-sm mb-6 ${plan.highlight ? 'text-white/70' : 'text-muted'}`}
+                className={`text-sm mb-6 ${plan.highlight ? 'text-white/60' : 'text-slate'}`}
               >
                 {plan.desc}
               </p>
 
               <div className="mb-6">
-                <span className="font-display text-4xl font-extrabold tracking-tight">{plan.price}</span>
+                <span className="font-display text-4xl font-bold tracking-tight">
+                  {plan.price}
+                </span>
                 <span
-                  className={`text-sm ml-1 ${plan.highlight ? 'text-white/70' : 'text-muted'}`}
+                  className={`text-sm ml-1 ${plan.highlight ? 'text-white/60' : 'text-slate'}`}
                 >
                   {plan.period}
                 </span>
@@ -126,11 +127,11 @@ export default function Pricing() {
                 {plan.features.map((f) => (
                   <li
                     key={f}
-                    className={`flex items-start gap-2 text-sm ${plan.highlight ? 'text-white/90' : 'text-ink-soft'}`}
+                    className={`flex items-start gap-2 text-sm ${plan.highlight ? 'text-white/90' : 'text-navy/80'}`}
                   >
                     <Check
                       size={15}
-                      className={`mt-0.5 shrink-0 ${plan.highlight ? 'text-brand-500' : 'text-brand-500'}`}
+                      className={`mt-0.5 shrink-0 ${plan.highlight ? 'text-cyan' : 'text-blue'}`}
                     />
                     <span>{f}</span>
                   </li>
@@ -141,8 +142,8 @@ export default function Pricing() {
                 href={`${POS_URL}/signup`}
                 className={`text-center font-semibold px-4 py-3 rounded-lg transition ${
                   plan.highlight
-                    ? 'bg-brand-500 text-white hover:bg-brand-600'
-                    : 'bg-ink text-white hover:bg-ink-soft'
+                    ? 'bg-cyan text-navy hover:bg-white'
+                    : 'bg-navy text-white hover:bg-blue'
                 }`}
               >
                 {plan.cta}
@@ -151,7 +152,7 @@ export default function Pricing() {
           ))}
         </div>
 
-        <p className="text-center text-sm text-muted mt-12">
+        <p className="text-center text-sm text-slate mt-12">
           Precios en pesos argentinos. IVA incluido. Pago mensual con Mercado Pago.
         </p>
       </div>

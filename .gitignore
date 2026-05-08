@@ -22,3 +22,6 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Brand reference (copied to public/brand/ with clean names)
+TrankaSoft marca/

@@ -7,25 +7,28 @@ export default function Nav() {
   const isPos = pathname === '/pos';
 
   return (
-    <nav className="sticky top-0 z-50 bg-white/85 backdrop-blur-md border-b border-line">
+    <nav className="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-line">
       <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-        <Link to="/" className="flex items-baseline gap-1 font-display font-extrabold text-xl tracking-tight">
-          <span className="text-ink">tranka</span>
-          <span className="text-brand-500">soft.</span>
+        <Link to="/" className="flex items-center gap-2 group">
+          <img
+            src="/brand/isotipo.png"
+            alt="TrankaSoft"
+            className="h-8 w-8 object-contain"
+          />
+          <span className="font-display font-bold text-lg text-navy tracking-tight">
+            TrankaSoft
+          </span>
         </Link>
 
-        <div className="hidden md:flex items-center gap-8 text-sm font-medium text-muted">
-          <Link to="/" className="hover:text-ink transition">
-            Inicio
-          </Link>
-          <Link to="/pos" className="hover:text-ink transition">
+        <div className="hidden md:flex items-center gap-8 text-sm font-medium text-slate">
+          <Link to="/pos" className="hover:text-navy transition">
             TrankaPOS
           </Link>
-          <Link to="/portal" className="hover:text-ink transition">
+          <Link to="/portal" className="hover:text-navy transition">
             TrankaPortal
           </Link>
           {isPos && (
-            <a href="#planes" className="hover:text-ink transition">
+            <a href="#planes" className="hover:text-navy transition">
               Planes
             </a>
           )}
@@ -34,13 +37,13 @@ export default function Nav() {
         <div className="flex items-center gap-2">
           <a
             href={`${POS_URL}/login`}
-            className="hidden sm:inline-block text-sm font-medium text-muted hover:text-ink px-3 py-2 transition"
+            className="hidden sm:inline-block text-sm font-medium text-slate hover:text-navy px-3 py-2 transition"
           >
             Iniciar sesión
           </a>
           <a
             href={`${POS_URL}/signup`}
-            className="bg-ink hover:bg-ink-soft text-white text-sm font-semibold px-4 py-2 rounded-lg transition"
+            className="bg-blue hover:bg-blue-dark text-white text-sm font-semibold px-4 py-2 rounded-lg transition shadow-sm shadow-blue/20"
           >
             Probar gratis
           </a>
