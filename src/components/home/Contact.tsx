@@ -40,16 +40,27 @@ export default function Contact() {
   }
 
   return (
-    <section id="contacto" className="py-16 md:py-28 px-5 md:px-6 bg-white">
-      <div className="max-w-6xl mx-auto grid md:grid-cols-12 gap-10">
+    <section id="contacto" className="relative py-20 md:py-32 px-5 md:px-6 bg-white overflow-hidden">
+      <div className="relative max-w-6xl mx-auto grid md:grid-cols-12 gap-10 md:gap-14">
         <div className="md:col-span-5">
-          <p className="eyebrow text-blue mb-4">— 05 / Contacto</p>
-          <h2 className="font-display font-bold text-4xl md:text-6xl text-navy leading-[1.05] mb-6 tracking-tight">
+          <div className="flex items-center gap-3 mb-5">
+            <span className="h-px w-10 bg-blue/60" />
+            <p className="eyebrow text-blue">05 — Contacto</p>
+          </div>
+
+          <h2 className="font-display font-bold text-4xl md:text-6xl lg:text-7xl text-navy leading-[1.02] mb-6 tracking-[-0.035em]">
             Hablemos<br />
             <span className="brand-gradient-text">tranquilos.</span>
           </h2>
+
+          <div className="inline-flex items-center gap-2.5 bg-blue/5 border border-blue/15 rounded-full px-3.5 py-1.5 mb-7">
+            <span className="status-dot status-dot--blue" />
+            <span className="marker text-blue">Respuesta &lt; 24hs hábiles</span>
+          </div>
+
           <p className="text-lg text-slate leading-relaxed mb-10">
-            Contanos qué necesitás. Te respondemos en menos de 24 horas hábiles.
+            Contanos qué necesitás. Te respondemos rápido y sin vueltas — sin
+            chatbots ni formularios eternos.
           </p>
 
           <ul className="space-y-5">
@@ -58,7 +69,7 @@ export default function Contact() {
                 <Mail size={18} className="text-blue" />
               </div>
               <div>
-                <p className="text-xs uppercase tracking-wider text-slate mb-0.5">Email</p>
+                <p className="marker text-slate mb-1">Email</p>
                 <a
                   href="mailto:ventas@trankasoft.com"
                   className="text-navy font-medium hover:text-blue transition"
@@ -72,10 +83,10 @@ export default function Contact() {
                 <Phone size={18} className="text-blue" />
               </div>
               <div>
-                <p className="text-xs uppercase tracking-wider text-slate mb-0.5">Teléfono / WhatsApp</p>
+                <p className="marker text-slate mb-1">Teléfono · WhatsApp</p>
                 <a
                   href="tel:+5493412550031"
-                  className="text-navy font-medium hover:text-blue transition"
+                  className="text-navy font-medium hover:text-blue transition tabular-nums"
                 >
                   +54 9 3412 55-0031
                 </a>
@@ -86,7 +97,7 @@ export default function Contact() {
                 <MapPin size={18} className="text-blue" />
               </div>
               <div>
-                <p className="text-xs uppercase tracking-wider text-slate mb-0.5">Ubicación</p>
+                <p className="marker text-slate mb-1">Ubicación</p>
                 <p className="text-navy font-medium">Argentina</p>
               </div>
             </li>
@@ -96,11 +107,16 @@ export default function Contact() {
         <div className="md:col-span-7">
           <form
             onSubmit={handleSubmit}
-            className="bg-ice/40 rounded-2xl p-7 md:p-8 border border-line space-y-5"
+            className="relative bg-ice/40 rounded-2xl p-7 md:p-9 border border-line space-y-5"
           >
+            <div className="flex items-center justify-between mb-2">
+              <p className="marker text-slate">— Formulario · 01</p>
+              <p className="marker text-slate">5 campos</p>
+            </div>
+
             <div className="grid sm:grid-cols-2 gap-5">
               <div>
-                <label htmlFor="name" className="block text-sm font-medium text-navy mb-2">
+                <label htmlFor="name" className="block marker text-navy/70 mb-2">
                   Nombre
                 </label>
                 <input
@@ -108,12 +124,12 @@ export default function Contact() {
                   id="name"
                   name="name"
                   type="text"
-                  className="w-full px-4 py-3 rounded-lg bg-white border border-line text-navy focus:outline-none focus:border-blue focus:ring-2 focus:ring-blue/20 transition"
+                  className="w-full px-4 py-3 rounded-lg bg-white border border-line text-navy placeholder:text-slate-soft focus:outline-none focus:border-blue focus:ring-4 focus:ring-blue/15 transition"
                   placeholder="Tu nombre"
                 />
               </div>
               <div>
-                <label htmlFor="email" className="block text-sm font-medium text-navy mb-2">
+                <label htmlFor="email" className="block marker text-navy/70 mb-2">
                   Email
                 </label>
                 <input
@@ -121,7 +137,7 @@ export default function Contact() {
                   id="email"
                   name="email"
                   type="email"
-                  className="w-full px-4 py-3 rounded-lg bg-white border border-line text-navy focus:outline-none focus:border-blue focus:ring-2 focus:ring-blue/20 transition"
+                  className="w-full px-4 py-3 rounded-lg bg-white border border-line text-navy placeholder:text-slate-soft focus:outline-none focus:border-blue focus:ring-4 focus:ring-blue/15 transition"
                   placeholder="vos@empresa.com"
                 />
               </div>
@@ -129,25 +145,25 @@ export default function Contact() {
 
             <div className="grid sm:grid-cols-2 gap-5">
               <div>
-                <label htmlFor="phone" className="block text-sm font-medium text-navy mb-2">
-                  Teléfono <span className="text-slate font-normal">(opcional)</span>
+                <label htmlFor="phone" className="block marker text-navy/70 mb-2">
+                  Teléfono <span className="normal-case tracking-normal text-slate-soft">(opcional)</span>
                 </label>
                 <input
                   id="phone"
                   name="phone"
                   type="tel"
-                  className="w-full px-4 py-3 rounded-lg bg-white border border-line text-navy focus:outline-none focus:border-blue focus:ring-2 focus:ring-blue/20 transition"
+                  className="w-full px-4 py-3 rounded-lg bg-white border border-line text-navy placeholder:text-slate-soft focus:outline-none focus:border-blue focus:ring-4 focus:ring-blue/15 transition tabular-nums"
                   placeholder="+54 ..."
                 />
               </div>
               <div>
-                <label htmlFor="topic" className="block text-sm font-medium text-navy mb-2">
+                <label htmlFor="topic" className="block marker text-navy/70 mb-2">
                   Sobre qué consultás
                 </label>
                 <select
                   id="topic"
                   name="topic"
-                  className="w-full px-4 py-3 rounded-lg bg-white border border-line text-navy focus:outline-none focus:border-blue focus:ring-2 focus:ring-blue/20 transition"
+                  className="w-full px-4 py-3 rounded-lg bg-white border border-line text-navy focus:outline-none focus:border-blue focus:ring-4 focus:ring-blue/15 transition"
                 >
                   <option>TrankaPOS</option>
                   <option>TrankaPortal</option>
@@ -158,7 +174,7 @@ export default function Contact() {
             </div>
 
             <div>
-              <label htmlFor="message" className="block text-sm font-medium text-navy mb-2">
+              <label htmlFor="message" className="block marker text-navy/70 mb-2">
                 Mensaje
               </label>
               <textarea
@@ -166,31 +182,39 @@ export default function Contact() {
                 id="message"
                 name="message"
                 rows={5}
-                className="w-full px-4 py-3 rounded-lg bg-white border border-line text-navy focus:outline-none focus:border-blue focus:ring-2 focus:ring-blue/20 transition resize-none"
+                className="w-full px-4 py-3 rounded-lg bg-white border border-line text-navy placeholder:text-slate-soft focus:outline-none focus:border-blue focus:ring-4 focus:ring-blue/15 transition resize-none"
                 placeholder="Contanos brevemente qué necesitás."
               />
             </div>
 
             <input type="checkbox" name="botcheck" className="hidden" tabIndex={-1} autoComplete="off" />
 
-            <button
-              type="submit"
-              disabled={status === 'sending'}
-              className="bg-blue hover:bg-blue-dark disabled:bg-slate disabled:cursor-not-allowed text-white font-semibold px-7 py-3.5 rounded-lg transition flex items-center gap-2 shadow-lg shadow-blue/20"
-            >
-              {status === 'sending' ? 'Enviando...' : 'Enviar mensaje'}
-              <Send size={16} />
-            </button>
+            <div className="flex items-center justify-between gap-4 pt-2">
+              <p className="marker text-slate hidden sm:block">
+                · No spam, no chatbots
+              </p>
+              <button
+                type="submit"
+                disabled={status === 'sending'}
+                className="group bg-blue hover:bg-blue-dark disabled:bg-slate disabled:cursor-not-allowed text-white font-semibold px-7 py-3.5 rounded-lg transition-all flex items-center gap-2 shadow-lg shadow-blue/25 hover:shadow-xl hover:shadow-blue/35 hover:-translate-y-0.5 disabled:hover:translate-y-0 disabled:shadow-none"
+              >
+                {status === 'sending' ? 'Enviando...' : 'Enviar mensaje'}
+                <Send
+                  size={16}
+                  className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"
+                />
+              </button>
+            </div>
 
             {status === 'success' && (
-              <div className="flex items-start gap-2 text-sm text-blue bg-blue/5 border border-blue/20 rounded-lg p-3">
+              <div className="flex items-start gap-2.5 text-sm text-blue bg-blue/5 border border-blue/20 rounded-lg p-3.5">
                 <CheckCircle2 size={18} className="shrink-0 mt-0.5" />
                 <p>¡Listo! Recibimos tu mensaje. Te respondemos en menos de 24 hs hábiles.</p>
               </div>
             )}
 
             {status === 'error' && (
-              <div className="flex items-start gap-2 text-sm text-orange bg-orange/5 border border-orange/20 rounded-lg p-3">
+              <div className="flex items-start gap-2.5 text-sm text-orange bg-orange/5 border border-orange/20 rounded-lg p-3.5">
                 <AlertCircle size={18} className="shrink-0 mt-0.5" />
                 <p>{errorMsg}</p>
               </div>
