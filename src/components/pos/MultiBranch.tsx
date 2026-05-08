@@ -1,4 +1,5 @@
 import { ArrowRightLeft, Building2, BarChart2 } from 'lucide-react';
+import { motion } from 'motion/react';
 
 const POINTS = [
   {
@@ -20,7 +21,7 @@ const POINTS = [
 
 export default function MultiBranch() {
   return (
-    <section className="relative bg-navy text-white overflow-hidden">
+    <section id="multi-sucursal" className="relative bg-navy text-white overflow-hidden">
       <div
         className="absolute inset-0 opacity-50"
         style={{
@@ -45,17 +46,22 @@ export default function MultiBranch() {
         </div>
 
         <div className="grid md:grid-cols-3 gap-6">
-          {POINTS.map(({ icon: Icon, title, desc }) => (
-            <div
+          {POINTS.map(({ icon: Icon, title, desc }, i) => (
+            <motion.div
               key={title}
-              className="border border-white/10 rounded-2xl p-6 hover:border-cyan/40 transition"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: '-80px' }}
+              transition={{ duration: 0.55, delay: i * 0.12, ease: 'easeOut' }}
+              whileHover={{ y: -4, borderColor: 'rgba(63,169,255,0.6)' }}
+              className="border border-white/10 rounded-2xl p-6 transition-colors"
             >
               <Icon size={28} className="text-cyan mb-4" />
               <h3 className="font-display font-bold text-xl mb-2 tracking-tight">
                 {title}
               </h3>
               <p className="text-white/70 text-sm leading-relaxed">{desc}</p>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

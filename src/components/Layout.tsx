@@ -1,6 +1,7 @@
 import { Outlet, ScrollRestoration } from 'react-router-dom';
 import Nav from './Nav';
 import Footer from './Footer';
+import WhatsAppFab from './WhatsAppFab';
 
 export default function Layout() {
   return (
@@ -10,6 +11,7 @@ export default function Layout() {
         <Outlet />
       </main>
       <Footer />
+      <WhatsAppFab />
       <ScrollRestoration />
     </>
   );

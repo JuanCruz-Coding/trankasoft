@@ -1,4 +1,5 @@
 import { Check } from 'lucide-react';
+import { motion } from 'motion/react';
 
 const POS_URL = 'https://pos.trankasoft.com';
 
@@ -86,9 +87,14 @@ export default function Pricing() {
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
-          {PLANS.map((plan) => (
-            <div
+          {PLANS.map((plan, i) => (
+            <motion.div
               key={plan.code}
+              initial={{ opacity: 0, y: 32 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: '-80px' }}
+              transition={{ duration: 0.5, delay: i * 0.1, ease: 'easeOut' }}
+              whileHover={{ y: plan.highlight ? -8 : -4 }}
               className={`relative rounded-2xl p-7 flex flex-col ${
                 plan.highlight
                   ? 'bg-navy text-white shadow-2xl shadow-navy/20'
@@ -148,7 +154,7 @@ export default function Pricing() {
               >
                 {plan.cta}
               </a>
-            </div>
+            </motion.div>
           ))}
         </div>
 

@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { ArrowUpRight, Store, Users, Sparkles } from 'lucide-react';
+import { motion } from 'motion/react';
 
 const PRODUCTS = [
   {
@@ -54,13 +55,18 @@ export default function ProductGrid() {
         </div>
 
         <div className="grid md:grid-cols-3 gap-5">
-          {PRODUCTS.map((p) => {
+          {PRODUCTS.map((p, i) => {
             const Icon = p.icon;
             const Inner = (
-              <div
-                className={`h-full rounded-2xl p-7 flex flex-col transition ${
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: '-80px' }}
+                transition={{ duration: 0.5, delay: i * 0.1, ease: 'easeOut' }}
+                whileHover={p.available ? { y: -6 } : undefined}
+                className={`h-full rounded-2xl p-7 flex flex-col ${
                   p.available
-                    ? 'bg-white border border-line hover:border-blue hover:-translate-y-1 hover:shadow-xl hover:shadow-blue/10'
+                    ? 'bg-white border border-line hover:border-blue hover:shadow-xl hover:shadow-blue/10 transition-[border-color,box-shadow]'
                     : 'bg-white/40 border border-dashed border-slate/30'
                 }`}
               >
@@ -114,7 +120,7 @@ export default function ProductGrid() {
                 >
                   {p.cta} {p.available && '→'}
                 </span>
-              </div>
+              </motion.div>
             );
 
             return p.href ? (

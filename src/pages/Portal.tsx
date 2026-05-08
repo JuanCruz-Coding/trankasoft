@@ -23,7 +23,7 @@ export default function Portal() {
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
           <a
-            href="mailto:soporte@trankasoft.com?subject=Quiero%20probar%20TrankaPortal"
+            href="mailto:ventas@trankasoft.com?subject=Quiero%20probar%20TrankaPortal"
             className="bg-blue hover:bg-blue-dark text-white font-semibold px-6 py-3.5 rounded-lg transition flex items-center gap-2 w-full sm:w-auto justify-center shadow-lg shadow-blue/20"
           >
             <Mail size={18} />

@@ -1,4 +1,5 @@
 import { ScanBarcode, Printer, Laptop } from 'lucide-react';
+import { motion } from 'motion/react';
 
 const ITEMS = [
   {
@@ -31,9 +32,14 @@ export default function Hardware() {
         </div>
 
         <div className="grid md:grid-cols-3 gap-6">
-          {ITEMS.map(({ icon: Icon, title, desc }) => (
-            <div
+          {ITEMS.map(({ icon: Icon, title, desc }, i) => (
+            <motion.div
               key={title}
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: '-60px' }}
+              transition={{ duration: 0.5, delay: i * 0.1, ease: 'easeOut' }}
+              whileHover={{ y: -4, scale: 1.01 }}
               className="bg-ice/40 rounded-2xl p-6 border border-ice"
             >
               <Icon size={28} className="text-blue mb-4" />
@@ -41,7 +47,7 @@ export default function Hardware() {
                 {title}
               </h3>
               <p className="text-slate text-sm leading-relaxed">{desc}</p>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

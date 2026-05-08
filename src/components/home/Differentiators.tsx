@@ -1,4 +1,5 @@
 import { Cloud, ShieldCheck, MessageCircle, MapPin } from 'lucide-react';
+import { motion } from 'motion/react';
 
 const ITEMS = [
   {
@@ -25,7 +26,7 @@ const ITEMS = [
 
 export default function Differentiators() {
   return (
-    <section className="py-28 px-6 bg-white">
+    <section id="por-que" className="py-28 px-6 bg-white">
       <div className="max-w-6xl mx-auto">
         <div className="max-w-3xl mx-auto text-center mb-20">
           <p className="eyebrow text-blue mb-4">— 03 / Por qué TrankaSoft</p>
@@ -36,8 +37,14 @@ export default function Differentiators() {
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10">
-          {ITEMS.map(({ icon: Icon, title, desc }) => (
-            <div key={title}>
+          {ITEMS.map(({ icon: Icon, title, desc }, i) => (
+            <motion.div
+              key={title}
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: '-60px' }}
+              transition={{ duration: 0.5, delay: i * 0.1, ease: 'easeOut' }}
+            >
               <div className="w-12 h-12 rounded-xl bg-ice flex items-center justify-center mb-5">
                 <Icon size={22} className="text-blue" />
               </div>
@@ -45,7 +52,7 @@ export default function Differentiators() {
                 {title}
               </h3>
               <p className="text-slate text-sm leading-relaxed">{desc}</p>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

@@ -6,6 +6,7 @@ import {
   Receipt,
   Users,
 } from 'lucide-react';
+import { motion } from 'motion/react';
 
 const FEATURES = [
   {
@@ -57,19 +58,27 @@ export default function Features() {
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-px bg-line border border-line rounded-2xl overflow-hidden">
-          {FEATURES.map(({ icon: Icon, title, desc }) => (
-            <div
+          {FEATURES.map(({ icon: Icon, title, desc }, i) => (
+            <motion.div
               key={title}
-              className="bg-white p-7 hover:bg-ice/40 transition"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: '-60px' }}
+              transition={{ duration: 0.45, delay: i * 0.06, ease: 'easeOut' }}
+              className="bg-white p-7 hover:bg-ice/40 transition group"
             >
-              <div className="w-11 h-11 rounded-xl bg-ice flex items-center justify-center mb-5">
+              <motion.div
+                whileHover={{ scale: 1.08, rotate: -5 }}
+                transition={{ type: 'spring', stiffness: 300 }}
+                className="w-11 h-11 rounded-xl bg-ice flex items-center justify-center mb-5"
+              >
                 <Icon size={22} className="text-blue" />
-              </div>
+              </motion.div>
               <h3 className="font-display font-bold text-lg text-navy mb-2 tracking-tight">
                 {title}
               </h3>
               <p className="text-slate text-sm leading-relaxed">{desc}</p>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

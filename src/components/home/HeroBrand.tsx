@@ -36,7 +36,7 @@ export default function HeroBrand() {
               <ArrowRight size={18} />
             </a>
             <a
-              href="mailto:soporte@trankasoft.com?subject=Consulta%20comercial"
+              href="mailto:ventas@trankasoft.com?subject=Consulta%20comercial"
               className="border border-white/20 hover:border-white/40 hover:bg-white/5 text-white font-semibold px-7 py-3.5 rounded-lg transition w-full sm:w-auto text-center"
             >
               Hablar con ventas

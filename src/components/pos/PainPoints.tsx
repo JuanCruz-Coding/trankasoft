@@ -1,3 +1,5 @@
+import { motion } from 'motion/react';
+
 const PAINS = [
   {
     pain: '"No sé qué se vende y qué no."',
@@ -38,13 +40,20 @@ export default function PainPoints() {
         </div>
 
         <div className="grid md:grid-cols-2 gap-x-12 gap-y-10">
-          {PAINS.map(({ pain, solution }) => (
-            <div key={pain} className="border-l-2 border-cyan pl-5">
+          {PAINS.map(({ pain, solution }, i) => (
+            <motion.div
+              key={pain}
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, margin: '-60px' }}
+              transition={{ duration: 0.5, delay: i * 0.08, ease: 'easeOut' }}
+              className="border-l-2 border-cyan pl-5"
+            >
               <p className="font-display font-bold text-xl text-navy mb-2 italic">
                 {pain}
               </p>
               <p className="text-slate text-sm leading-relaxed">{solution}</p>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

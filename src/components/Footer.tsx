@@ -10,15 +10,12 @@ export default function Footer() {
       <div className="max-w-6xl mx-auto">
         <div className="grid md:grid-cols-12 gap-10 mb-12">
           <div className="md:col-span-5">
-            <Link to="/" className="flex items-center gap-2 mb-5">
+            <Link to="/" className="inline-block mb-5">
               <img
-                src="/brand/isotipo.png"
+                src="/brand/wordmark-negative.png"
                 alt="TrankaSoft"
-                className="h-9 w-9 object-contain"
+                className="h-14 w-auto object-contain"
               />
-              <span className="font-display font-bold text-xl tracking-tight">
-                TrankaSoft
-              </span>
             </Link>
             <p className="font-display text-2xl font-medium text-cyan mb-4 tracking-tight">
               Software con calma.
@@ -66,11 +63,11 @@ export default function Footer() {
             <ul className="space-y-2.5 text-sm">
               <li>
                 <a
-                  href="mailto:soporte@trankasoft.com"
+                  href="mailto:ventas@trankasoft.com"
                   className="text-white/70 hover:text-white transition flex items-center gap-2"
                 >
                   <Mail size={14} />
-                  soporte@trankasoft.com
+                  ventas@trankasoft.com
                 </a>
               </li>
               <li>
