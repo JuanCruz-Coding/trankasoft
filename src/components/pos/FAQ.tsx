@@ -27,30 +27,30 @@ const FAQS = [
 
 export default function FAQ() {
   return (
-    <section id="faq" className="py-24 px-6 bg-white">
+    <section id="faq" className="py-28 px-6 bg-surface-alt">
       <div className="max-w-3xl mx-auto">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-extrabold text-ink mb-4">
+        <div className="mb-12">
+          <span className="inline-block text-brand-600 text-xs font-bold uppercase tracking-[0.2em] mb-4">
             Preguntas frecuentes
+          </span>
+          <h2 className="font-display font-extrabold text-4xl md:text-5xl text-ink leading-[1.05]">
+            Lo que más nos preguntan.
           </h2>
-          <p className="text-lg text-muted">
-            Si no encontrás lo que buscás, escribinos.
-          </p>
         </div>
 
-        <div className="space-y-3">
+        <div className="divide-y divide-line border-y border-line">
           {FAQS.map(({ q, a }) => (
             <details
               key={q}
-              className="group border border-slate-200 rounded-xl px-5 py-4 hover:border-slate-300 transition"
+              className="group py-5"
             >
-              <summary className="font-semibold text-ink cursor-pointer list-none flex items-center justify-between">
+              <summary className="font-semibold text-ink cursor-pointer list-none flex items-center justify-between gap-4 text-base md:text-lg">
                 <span>{q}</span>
-                <span className="text-brand-500 text-2xl group-open:rotate-45 transition-transform">
+                <span className="text-muted text-2xl group-open:rotate-45 transition-transform shrink-0">
                   +
                 </span>
               </summary>
-              <p className="text-muted text-sm mt-3 leading-relaxed">{a}</p>
+              <p className="text-muted text-base mt-3 leading-relaxed pr-10">{a}</p>
             </details>
           ))}
         </div>

@@ -1,23 +1,22 @@
-import Nav from './components/Nav';
-import Hero from './components/Hero';
-import Features from './components/Features';
-import Pricing from './components/Pricing';
-import FAQ from './components/FAQ';
-import CTA from './components/CTA';
-import Footer from './components/Footer';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import Layout from './components/Layout';
+import Home from './pages/Home';
+import Pos from './pages/Pos';
+import Portal from './pages/Portal';
+import NotFound from './pages/NotFound';
+
+const router = createBrowserRouter([
+  {
+    element: <Layout />,
+    children: [
+      { path: '/', element: <Home /> },
+      { path: '/pos', element: <Pos /> },
+      { path: '/portal', element: <Portal /> },
+      { path: '*', element: <NotFound /> },
+    ],
+  },
+]);
 
 export default function App() {
-  return (
-    <>
-      <Nav />
-      <main>
-        <Hero />
-        <Features />
-        <Pricing />
-        <FAQ />
-        <CTA />
-      </main>
-      <Footer />
-    </>
-  );
+  return <RouterProvider router={router} />;
 }

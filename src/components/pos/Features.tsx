@@ -42,27 +42,29 @@ const FEATURES = [
 
 export default function Features() {
   return (
-    <section id="features" className="py-24 px-6 bg-white">
+    <section id="features" className="py-28 px-6 bg-surface-alt">
       <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-extrabold text-ink mb-4">
-            Todo lo que necesitás para vender más y ordenado
+        <div className="max-w-3xl mb-16">
+          <span className="inline-block text-brand-600 text-xs font-bold uppercase tracking-[0.2em] mb-4">
+            Características
+          </span>
+          <h2 className="font-display font-extrabold text-4xl md:text-5xl text-ink leading-[1.05] mb-5">
+            Todo lo que necesitás<br />
+            para vender más y ordenado.
           </h2>
-          <p className="text-lg text-muted max-w-2xl mx-auto">
+          <p className="text-lg text-muted">
             Pensado para kioscos, despensas y comercios multi-sucursal que ya no
             quieren manejar todo con cuadernos y planillas.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-px bg-line border border-line rounded-2xl overflow-hidden">
           {FEATURES.map(({ icon: Icon, title, desc }) => (
             <div
               key={title}
-              className="border border-slate-200 rounded-xl p-6 hover:border-brand-500 hover:shadow-md transition"
+              className="bg-white p-7 hover:bg-surface-alt transition"
             >
-              <div className="w-11 h-11 rounded-lg bg-brand-50 flex items-center justify-center mb-4">
-                <Icon size={22} className="text-brand-500" />
-              </div>
+              <Icon size={22} className="text-brand-500 mb-4" />
               <h3 className="font-bold text-lg text-ink mb-2">{title}</h3>
               <p className="text-muted text-sm leading-relaxed">{desc}</p>
             </div>
