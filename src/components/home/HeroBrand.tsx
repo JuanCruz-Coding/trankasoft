@@ -157,12 +157,12 @@ export default function HeroBrand() {
               transition={{ duration: 0.7, delay: 0.8, ease: [0.22, 1, 0.36, 1] }}
               className="absolute bottom-[10%] left-[2%] md:left-[-6%] bg-white/[0.06] backdrop-blur-md border border-white/15 rounded-xl px-3 py-2 flex items-center gap-2.5 shadow-2xl shadow-blue/20"
             >
-              <div className="w-7 h-7 rounded-lg bg-cyan/20 flex items-center justify-center">
-                <Users size={14} className="text-cyan" />
+              <div className="w-7 h-7 rounded-lg bg-orange/25 flex items-center justify-center">
+                <Users size={14} className="text-orange" />
               </div>
               <div className="text-left">
                 <p className="text-white text-xs font-semibold leading-none mb-0.5">TrankaPortal</p>
-                <p className="text-white/55 text-[10px] leading-none tracking-wide">RRHH</p>
+                <p className="text-orange/80 text-[10px] leading-none tracking-wide">RRHH · Pronto</p>
               </div>
             </motion.div>
 

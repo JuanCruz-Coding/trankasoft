@@ -1,6 +1,9 @@
 import { Link } from 'react-router-dom';
 import { ArrowUpRight, Store, Users, Sparkles } from 'lucide-react';
 import { motion } from 'motion/react';
+import type { CSSProperties } from 'react';
+
+type State = 'live' | 'preview' | 'soon';
 
 type Product = {
   code: string;
@@ -13,7 +16,7 @@ type Product = {
   features: string[];
   cta: string;
   status: string;
-  available: boolean;
+  state: State;
 };
 
 const PRODUCTS: Product[] = [
@@ -28,7 +31,7 @@ const PRODUCTS: Product[] = [
     features: ['Multi-sucursal', 'Arqueo automático', 'Reportes filtrados'],
     cta: 'Conocer TrankaPOS',
     status: 'Disponible',
-    available: true,
+    state: 'live',
   },
   {
     code: 'portal',
@@ -37,11 +40,11 @@ const PRODUCTS: Product[] = [
     icon: Users,
     name: 'TrankaPortal',
     tagline: 'Gestión de RRHH para PyMEs',
-    desc: 'Recibos de sueldo, ausencias y comunicación interna en una sola plataforma.',
+    desc: 'Recibos de sueldo, ausencias y comunicación interna en una sola plataforma. Estamos cerrando la beta — sumate a la lista para probarlo apenas salga.',
     features: ['Recibos digitales', 'Solicitudes online', 'Portal del empleado'],
-    cta: 'Conocer TrankaPortal',
-    status: 'Disponible',
-    available: true,
+    cta: 'Avisame cuando esté',
+    status: 'En desarrollo',
+    state: 'preview',
   },
   {
     code: 'next',
@@ -53,10 +56,60 @@ const PRODUCTS: Product[] = [
     desc: 'Estamos construyendo más productos para acompañarte. Si te sumás temprano, te avisamos primero.',
     features: [],
     cta: 'Avisame cuando esté',
-    status: 'En desarrollo',
-    available: false,
+    status: 'Próximamente',
+    state: 'soon',
   },
 ];
+
+type Style = {
+  card: string;
+  iconBg: string;
+  iconColor: string;
+  numeral: string;
+  pill: string;
+  dotClass: string;
+  dotStyle?: CSSProperties;
+  cta: string;
+  arrow: string;
+  showArrow: boolean;
+};
+
+const STYLES: Record<State, Style> = {
+  live: {
+    card: 'bg-white border border-line group-hover:border-blue/40 group-hover:shadow-2xl group-hover:shadow-blue/15',
+    iconBg: 'bg-blue/10 group-hover:bg-blue group-hover:rotate-[-6deg]',
+    iconColor: 'text-blue group-hover:text-white',
+    numeral: 'text-ice group-hover:text-blue/10',
+    pill: 'bg-blue/10 text-blue',
+    dotClass: 'status-dot status-dot--blue',
+    cta: 'text-navy',
+    arrow: 'bg-navy/5 group-hover:bg-blue text-navy group-hover:text-white',
+    showArrow: true,
+  },
+  preview: {
+    card: 'bg-white border border-line group-hover:border-orange/40 group-hover:shadow-2xl group-hover:shadow-orange/15',
+    iconBg: 'bg-orange/10 group-hover:bg-orange group-hover:rotate-[-6deg]',
+    iconColor: 'text-orange group-hover:text-white',
+    numeral: 'text-ice group-hover:text-orange/10',
+    pill: 'bg-orange/10 text-orange',
+    dotClass: 'status-dot status-dot--orange',
+    cta: 'text-navy',
+    arrow: 'bg-navy/5 group-hover:bg-orange text-navy group-hover:text-white',
+    showArrow: true,
+  },
+  soon: {
+    card: 'bg-white/40 border border-dashed border-slate/30',
+    iconBg: 'bg-slate/10',
+    iconColor: 'text-slate',
+    numeral: 'text-slate/10',
+    pill: 'bg-slate/10 text-slate',
+    dotClass: 'status-dot',
+    dotStyle: { background: 'var(--color-slate)', animation: 'none' },
+    cta: 'text-slate',
+    arrow: '',
+    showArrow: false,
+  },
+};
 
 export default function ProductGrid() {
   return (
@@ -85,25 +138,19 @@ export default function ProductGrid() {
         <div className="grid md:grid-cols-3 gap-5">
           {PRODUCTS.map((p, i) => {
             const Icon = p.icon;
+            const s = STYLES[p.state];
+            const hoverable = p.state !== 'soon';
             const Inner = (
               <motion.div
                 initial={{ opacity: 0, y: 32 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: '-80px' }}
                 transition={{ duration: 0.55, delay: i * 0.1, ease: [0.22, 1, 0.36, 1] }}
-                whileHover={p.available ? { y: -6 } : undefined}
-                className={`relative h-full rounded-2xl p-7 md:p-8 flex flex-col overflow-hidden transition-[border-color,box-shadow] ${
-                  p.available
-                    ? 'bg-white border border-line group-hover:border-blue/40 group-hover:shadow-2xl group-hover:shadow-blue/15'
-                    : 'bg-white/40 border border-dashed border-slate/30'
-                }`}
+                whileHover={hoverable ? { y: -6 } : undefined}
+                className={`relative h-full rounded-2xl p-7 md:p-8 flex flex-col overflow-hidden transition-[border-color,box-shadow] ${s.card}`}
               >
                 <span
-                  className={`absolute -top-6 -right-3 font-display font-bold text-[160px] leading-none tracking-[-0.06em] pointer-events-none select-none transition-colors duration-500 ${
-                    p.available
-                      ? 'text-ice group-hover:text-blue/10'
-                      : 'text-slate/10'
-                  }`}
+                  className={`absolute -top-6 -right-3 font-display font-bold text-[160px] leading-none tracking-[-0.06em] pointer-events-none select-none transition-colors duration-500 ${s.numeral}`}
                   aria-hidden="true"
                 >
                   {p.index}
@@ -111,33 +158,15 @@ export default function ProductGrid() {
 
                 <div className="relative flex items-start justify-between mb-7">
                   <div
-                    className={`w-12 h-12 rounded-xl flex items-center justify-center transition-all duration-300 ${
-                      p.available
-                        ? 'bg-blue/10 group-hover:bg-blue group-hover:rotate-[-6deg]'
-                        : 'bg-slate/10'
-                    }`}
+                    className={`w-12 h-12 rounded-xl flex items-center justify-center transition-all duration-300 ${s.iconBg}`}
                   >
-                    <Icon
-                      size={22}
-                      className={
-                        p.available
-                          ? 'text-blue group-hover:text-white transition-colors'
-                          : 'text-slate'
-                      }
-                    />
+                    <Icon size={22} className={`${s.iconColor} transition-colors`} />
                   </div>
 
                   <span
-                    className={`text-[10px] font-semibold uppercase tracking-[0.2em] px-2.5 py-1.5 rounded-full flex items-center gap-1.5 ${
-                      p.available
-                        ? 'bg-blue/10 text-blue'
-                        : 'bg-orange/10 text-orange'
-                    }`}
+                    className={`text-[10px] font-semibold uppercase tracking-[0.2em] px-2.5 py-1.5 rounded-full flex items-center gap-1.5 ${s.pill}`}
                   >
-                    <span
-                      className={`status-dot ${p.available ? 'status-dot--blue' : ''}`}
-                      style={!p.available ? { background: 'var(--color-orange)', animation: 'none' } : undefined}
-                    />
+                    <span className={s.dotClass} style={s.dotStyle} />
                     {p.status}
                   </span>
                 </div>
@@ -146,7 +175,11 @@ export default function ProductGrid() {
                   <h3 className="font-display font-bold text-2xl md:text-3xl text-navy mb-1.5 tracking-[-0.025em]">
                     {p.name}
                   </h3>
-                  <p className="text-sm text-blue font-medium mb-5">
+                  <p
+                    className={`text-sm font-medium mb-5 ${
+                      p.state === 'preview' ? 'text-orange' : 'text-blue'
+                    }`}
+                  >
                     {p.tagline}
                   </p>
                   <p className="text-slate leading-relaxed mb-6 text-[15px]">
@@ -161,7 +194,11 @@ export default function ProductGrid() {
                         key={f}
                         className="text-sm text-navy/85 flex items-center gap-3"
                       >
-                        <span className="w-3.5 h-px bg-blue shrink-0" />
+                        <span
+                          className={`w-3.5 h-px shrink-0 ${
+                            p.state === 'preview' ? 'bg-orange' : 'bg-blue'
+                          }`}
+                        />
                         {f}
                       </li>
                     ))}
@@ -169,15 +206,13 @@ export default function ProductGrid() {
                 )}
 
                 <div className="relative mt-auto flex items-center justify-between">
-                  <span
-                    className={`text-sm font-semibold ${
-                      p.available ? 'text-navy' : 'text-slate'
-                    }`}
-                  >
+                  <span className={`text-sm font-semibold ${s.cta}`}>
                     {p.cta}
                   </span>
-                  {p.available && (
-                    <span className="w-9 h-9 rounded-full bg-navy/5 group-hover:bg-blue text-navy group-hover:text-white flex items-center justify-center transition-all duration-300">
+                  {s.showArrow && (
+                    <span
+                      className={`w-9 h-9 rounded-full flex items-center justify-center transition-all duration-300 ${s.arrow}`}
+                    >
                       <ArrowUpRight
                         size={16}
                         className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"

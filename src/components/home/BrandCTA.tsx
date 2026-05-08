@@ -54,9 +54,10 @@ export default function BrandCTA() {
           </Link>
           <Link
             to="/portal"
-            className="border border-white/25 hover:border-white/45 hover:bg-white/5 text-white font-semibold px-7 py-3.5 rounded-lg transition w-full sm:w-auto text-center"
+            className="group/cta border border-white/25 hover:border-orange/60 hover:bg-orange/10 text-white font-semibold px-7 py-3.5 rounded-lg transition w-full sm:w-auto text-center inline-flex items-center justify-center gap-2"
           >
-            Conocer TrankaPortal
+            <span className="status-dot status-dot--orange" />
+            Avisame de TrankaPortal
           </Link>
         </div>
       </div>
