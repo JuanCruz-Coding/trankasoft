@@ -40,7 +40,7 @@ export default function Contact() {
   }
 
   return (
-    <section id="contacto" className="py-28 px-6 bg-white">
+    <section id="contacto" className="py-16 md:py-28 px-5 md:px-6 bg-white">
       <div className="max-w-6xl mx-auto grid md:grid-cols-12 gap-10">
         <div className="md:col-span-5">
           <p className="eyebrow text-blue mb-4">— 05 / Contacto</p>

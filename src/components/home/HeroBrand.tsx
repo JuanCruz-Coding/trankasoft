@@ -12,16 +12,16 @@ export default function HeroBrand() {
         aria-hidden="true"
       />
 
-      <div className="relative max-w-6xl mx-auto px-6 pt-24 md:pt-32 pb-24 md:pb-32 grid md:grid-cols-12 gap-10 items-center">
-        <div className="md:col-span-7">
-          <p className="eyebrow text-cyan mb-6">— Software a medida</p>
+      <div className="relative max-w-6xl mx-auto px-5 md:px-6 pt-16 md:pt-32 pb-16 md:pb-32 grid md:grid-cols-12 gap-8 md:gap-10 items-center">
+        <div className="md:col-span-7 order-2 md:order-1">
+          <p className="eyebrow text-cyan mb-4 md:mb-6">— Software a medida</p>
 
-          <h1 className="font-display font-bold text-6xl md:text-8xl leading-[0.95] mb-6 tracking-tight">
+          <h1 className="font-display font-bold text-5xl sm:text-6xl md:text-7xl lg:text-8xl leading-[0.95] mb-5 md:mb-6 tracking-tight">
             Software<br />
             con <span className="brand-gradient-text">calma.</span>
           </h1>
 
-          <p className="text-lg md:text-xl text-white/70 max-w-xl mb-10 leading-relaxed">
+          <p className="text-base md:text-xl text-white/70 max-w-xl mb-8 md:mb-10 leading-relaxed">
             Construimos productos digitales claros, fluidos y confiables.
             TrankaPOS para tu comercio, TrankaPortal para tu equipo, y
             soluciones a medida para lo que tu empresa necesite.
@@ -44,12 +44,12 @@ export default function HeroBrand() {
           </div>
         </div>
 
-        <div className="md:col-span-5 flex items-center justify-center md:justify-end">
+        <div className="md:col-span-5 flex items-center justify-center md:justify-end order-1 md:order-2">
           <img
             src="/brand/isotipo.png"
             alt=""
             aria-hidden="true"
-            className="w-64 md:w-full max-w-md drop-shadow-[0_30px_60px_rgba(63,169,255,0.35)]"
+            className="w-44 sm:w-56 md:w-full max-w-md drop-shadow-[0_30px_60px_rgba(63,169,255,0.35)]"
           />
         </div>
       </div>

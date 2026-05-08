@@ -72,9 +72,9 @@ const PLANS = [
 
 export default function Pricing() {
   return (
-    <section id="planes" className="py-28 px-6 bg-ice">
+    <section id="planes" className="py-16 md:py-28 px-5 md:px-6 bg-ice">
       <div className="max-w-6xl mx-auto">
-        <div className="text-center max-w-3xl mx-auto mb-16">
+        <div className="text-center max-w-3xl mx-auto mb-10 md:mb-16">
           <p className="eyebrow text-blue mb-4">— 05 / Planes</p>
           <h2 className="font-display font-bold text-4xl md:text-6xl text-navy leading-[1.05] mb-5 tracking-tight">
             Simples,<br />

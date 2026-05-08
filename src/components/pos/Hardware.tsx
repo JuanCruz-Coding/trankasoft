@@ -21,7 +21,7 @@ const ITEMS = [
 
 export default function Hardware() {
   return (
-    <section className="py-24 px-6 bg-white border-y border-line">
+    <section className="py-16 md:py-24 px-5 md:px-6 bg-white border-y border-line">
       <div className="max-w-6xl mx-auto">
         <div className="max-w-3xl mb-12">
           <p className="eyebrow text-blue mb-4">— 04 / Hardware</p>

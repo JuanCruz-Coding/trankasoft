@@ -3,7 +3,7 @@ import { Users, ArrowLeft, Mail } from 'lucide-react';
 
 export default function Portal() {
   return (
-    <section className="min-h-[80vh] flex items-center justify-center px-6 py-32 bg-white">
+    <section className="min-h-[80vh] flex items-center justify-center px-5 md:px-6 py-20 md:py-32 bg-white">
       <div className="max-w-2xl text-center">
         <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-ice mb-8">
           <Users size={28} className="text-blue" />

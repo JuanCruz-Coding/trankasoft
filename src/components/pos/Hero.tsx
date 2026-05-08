@@ -8,17 +8,17 @@ export default function Hero() {
       id="top"
       className="relative bg-gradient-to-b from-ice to-white overflow-hidden border-b border-line"
     >
-      <div className="max-w-6xl mx-auto px-6 pt-24 md:pt-28 pb-20 md:pb-24 grid md:grid-cols-12 gap-10 items-center">
-        <div className="md:col-span-7">
-          <p className="eyebrow text-blue mb-6">— Tranka<span className="text-navy">POS</span></p>
+      <div className="max-w-6xl mx-auto px-5 md:px-6 pt-16 md:pt-28 pb-16 md:pb-24 grid md:grid-cols-12 gap-8 md:gap-10 items-center">
+        <div className="md:col-span-7 order-2 md:order-1">
+          <p className="eyebrow text-blue mb-4 md:mb-6">— Tranka<span className="text-navy">POS</span></p>
 
-          <h1 className="font-display font-bold text-5xl md:text-7xl text-navy leading-[0.98] mb-6 tracking-tight">
+          <h1 className="font-display font-bold text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-navy leading-[1.02] md:leading-[0.98] mb-5 md:mb-6 tracking-tight">
             El POS que ordena<br />
             tu kiosco{' '}
             <span className="brand-gradient-text">de verdad.</span>
           </h1>
 
-          <p className="text-lg md:text-xl text-slate max-w-xl mb-10 leading-relaxed">
+          <p className="text-base md:text-xl text-slate max-w-xl mb-8 md:mb-10 leading-relaxed">
             Control real de stock, caja y ventas para comercios multi-sucursal.
             Sin instalación, sin servidores, sin dolores de cabeza.
           </p>
@@ -52,12 +52,12 @@ export default function Hero() {
           </div>
         </div>
 
-        <div className="md:col-span-5 flex items-center justify-center md:justify-end">
+        <div className="md:col-span-5 flex items-center justify-center md:justify-end order-1 md:order-2">
           <img
             src="/brand/isotipo.png"
             alt=""
             aria-hidden="true"
-            className="w-48 md:w-72 drop-shadow-[0_25px_50px_rgba(21,101,240,0.25)]"
+            className="w-36 sm:w-48 md:w-72 drop-shadow-[0_25px_50px_rgba(21,101,240,0.25)]"
           />
         </div>
       </div>

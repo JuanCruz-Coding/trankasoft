@@ -14,7 +14,7 @@ export default function CTA() {
         aria-hidden="true"
       />
 
-      <div className="relative max-w-3xl mx-auto px-6 py-24 text-center">
+      <div className="relative max-w-3xl mx-auto px-5 md:px-6 py-16 md:py-24 text-center">
         <p className="eyebrow text-cyan mb-6">— Empezá hoy</p>
 
         <h2 className="font-display font-bold text-4xl md:text-6xl mb-6 leading-[1.05] tracking-tight">

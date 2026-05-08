@@ -29,9 +29,9 @@ const PAINS = [
 
 export default function PainPoints() {
   return (
-    <section className="py-28 px-6 bg-white border-b border-line">
+    <section className="py-16 md:py-28 px-5 md:px-6 bg-white border-b border-line">
       <div className="max-w-6xl mx-auto">
-        <div className="max-w-3xl mb-16">
+        <div className="max-w-3xl mb-10 md:mb-16">
           <p className="eyebrow text-blue mb-4">— 01 / Por qué TrankaPOS</p>
           <h2 className="font-display font-bold text-4xl md:text-6xl text-navy leading-[1.05] tracking-tight">
             Lo que escuchamos.<br />

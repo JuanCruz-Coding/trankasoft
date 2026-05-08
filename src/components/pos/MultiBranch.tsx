@@ -31,7 +31,7 @@ export default function MultiBranch() {
         aria-hidden="true"
       />
 
-      <div className="relative max-w-6xl mx-auto px-6 py-24 md:py-28">
+      <div className="relative max-w-6xl mx-auto px-5 md:px-6 py-16 md:py-28">
         <div className="max-w-3xl mb-14">
           <p className="eyebrow text-cyan mb-4">— 03 / Multi-sucursal en serio</p>
           <h2 className="font-display font-bold text-4xl md:text-6xl leading-[1.05] mb-6 tracking-tight">

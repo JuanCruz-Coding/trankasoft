@@ -21,7 +21,7 @@ const PILLARS = [
 
 export default function About() {
   return (
-    <section id="nosotros" className="py-28 px-6 bg-ice">
+    <section id="nosotros" className="py-16 md:py-28 px-5 md:px-6 bg-ice">
       <div className="max-w-6xl mx-auto grid md:grid-cols-12 gap-10 items-start">
         <div className="md:col-span-5">
           <p className="eyebrow text-blue mb-4">— 04 / Sobre nosotros</p>

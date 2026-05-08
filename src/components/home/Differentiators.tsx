@@ -26,9 +26,9 @@ const ITEMS = [
 
 export default function Differentiators() {
   return (
-    <section id="por-que" className="py-28 px-6 bg-white">
+    <section id="por-que" className="py-16 md:py-28 px-5 md:px-6 bg-white">
       <div className="max-w-6xl mx-auto">
-        <div className="max-w-3xl mx-auto text-center mb-20">
+        <div className="max-w-3xl mx-auto text-center mb-12 md:mb-20">
           <p className="eyebrow text-blue mb-4">— 03 / Por qué TrankaSoft</p>
           <h2 className="font-display font-bold text-4xl md:text-6xl text-navy leading-[1.05] tracking-tight">
             Software que no te<br />
