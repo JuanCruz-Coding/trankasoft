@@ -22,22 +22,32 @@ const router = createBrowserRouter([
 
 export default function App() {
   const [isLoading, setIsLoading] = useState(true);
+  const [isLoaderReady, setIsLoaderReady] = useState(false);
 
   useEffect(() => {
+    if (!isLoaderReady) return undefined;
+
     const timer = window.setTimeout(() => setIsLoading(false), LOADER_DURATION);
     return () => window.clearTimeout(timer);
-  }, []);
+  }, [isLoaderReady]);
 
   return (
     <>
       <RouterProvider router={router} />
 
-      <div className={`app-loader ${isLoading ? 'is-visible' : 'is-hidden'}`} aria-hidden={!isLoading}>
+      <div
+        className={`app-loader ${isLoading ? 'is-visible' : 'is-hidden'} ${
+          isLoaderReady ? 'is-ready' : ''
+        }`}
+        aria-hidden={!isLoading}
+      >
         <div className="app-loader__panel">
           <img
             src="/brand/loader-trankasoft.gif"
             alt="TrankaSoft"
             className="app-loader__mark"
+            onLoad={() => setIsLoaderReady(true)}
+            onError={() => setIsLoaderReady(true)}
           />
           <div className="app-loader__progress" aria-hidden="true">
             <span />
