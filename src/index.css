@@ -81,7 +81,6 @@ body {
   height: auto;
   object-fit: contain;
   filter: drop-shadow(0 22px 42px rgba(0, 0, 0, 0.35));
-  animation: loader-mark-spin 1.45s linear infinite;
 }
 
 .app-loader__progress {
@@ -265,7 +264,6 @@ body {
 
   .app-loader,
   .app-loader__panel,
-  .app-loader__mark,
   .app-loader__progress span {
     animation: none;
     transition: none;
@@ -295,11 +293,5 @@ body {
   100% {
     transform: scaleX(1);
     opacity: 0.65;
-  }
-}
-
-@keyframes loader-mark-spin {
-  to {
-    transform: rotate(360deg);
   }
 }
