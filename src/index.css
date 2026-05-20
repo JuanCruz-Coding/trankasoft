@@ -77,14 +77,14 @@ body {
 }
 
 .app-loader__mark {
-  width: min(220px, 58vw);
+  width: min(180px, 48vw);
   height: auto;
   object-fit: contain;
   filter: drop-shadow(0 22px 42px rgba(0, 0, 0, 0.35));
 }
 
 .app-loader__progress {
-  width: min(220px, 58vw);
+  width: min(180px, 48vw);
   height: 3px;
   overflow: hidden;
   border-radius: 999px;
