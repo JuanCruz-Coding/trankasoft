@@ -66,10 +66,10 @@ export default function HeroBrand() {
               transition={{ duration: 0.6, delay: 0.2, ease: 'easeOut' }}
               className="text-base md:text-xl text-white/65 max-w-xl mb-8 md:mb-10 leading-relaxed"
             >
-              Construimos productos digitales claros, fluidos y confiables.
-              <span className="text-white/85"> TrankaPOS</span> para tu comercio,
-              <span className="text-white/85"> TrankaPortal</span> para tu equipo,
-              y soluciones a medida para lo que tu empresa necesite.
+              Creamos soluciones digitales para que tu negocio venda más y trabaje mejor:
+              webs profesionales, automatizaciones de WhatsApp, sistemas internos y
+              productos propios como <span className="text-white/85">TrankaPOS</span> y{' '}
+              <span className="text-white/85">TrankaPortal</span>.
             </motion.p>
 
             <motion.div
