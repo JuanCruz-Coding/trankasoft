@@ -130,10 +130,10 @@ export default function HeroBrand() {
               initial={{ opacity: 0, scale: 0.92 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, ease: 'easeOut' }}
-              src="/brand/loader-trankasoft.gif"
+              src="/brand/isotipo.png"
               alt=""
               aria-hidden="true"
-              className="relative w-48 sm:w-60 md:w-72 drop-shadow-[0_30px_60px_rgba(63,169,255,0.5)]"
+              className="relative w-40 sm:w-52 md:w-64 drop-shadow-[0_30px_60px_rgba(63,169,255,0.5)]"
             />
 
             <motion.div
