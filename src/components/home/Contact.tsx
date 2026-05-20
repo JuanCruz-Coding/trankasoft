@@ -45,7 +45,7 @@ export default function Contact() {
         <div className="md:col-span-5">
           <div className="flex items-center gap-3 mb-5">
             <span className="h-px w-10 bg-blue/60" />
-            <p className="eyebrow text-blue">05 — Contacto</p>
+            <p className="eyebrow text-blue">06 — Contacto</p>
           </div>
 
           <h2 className="font-display font-bold text-4xl md:text-6xl lg:text-7xl text-navy leading-[1.02] mb-6 tracking-[-0.035em]">

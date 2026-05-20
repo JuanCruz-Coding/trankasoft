@@ -41,7 +41,7 @@ export default function About() {
           <div className="md:col-span-5 md:sticky md:top-28">
             <div className="flex items-center gap-3 mb-5">
               <span className="h-px w-10 bg-blue/60" />
-              <p className="eyebrow text-blue">04 — Sobre nosotros</p>
+              <p className="eyebrow text-blue">05 — Sobre nosotros</p>
             </div>
 
             <h2 className="font-display font-bold text-4xl md:text-6xl lg:text-7xl text-navy leading-[1.02] mb-7 tracking-[-0.035em]">

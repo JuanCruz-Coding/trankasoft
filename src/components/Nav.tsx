@@ -12,6 +12,7 @@ const NAV_LINKS: Record<string, NavLink[]> = {
   '/': [
     { label: 'Productos', href: '#productos' },
     { label: 'Por qué', href: '#por-que' },
+    { label: 'Portafolio', href: '#portafolio' },
     { label: 'Nosotros', href: '#nosotros' },
     { label: 'Contacto', href: '#contacto' },
   ],
