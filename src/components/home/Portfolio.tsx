@@ -50,12 +50,12 @@ export default function Portfolio() {
 
             <div className="flex flex-col sm:flex-row gap-3">
               <a
-                href="https://rtransmisiones.com"
+                href="https://rtransmisiones.com.ar"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group inline-flex items-center justify-center gap-2 bg-cyan hover:bg-white text-navy font-semibold px-5 py-3 rounded-lg transition-all shadow-lg shadow-cyan/20 hover:-translate-y-0.5"
               >
-                Ver rtransmisiones.com
+                Ver rtransmisiones.com.ar
                 <ArrowUpRight
                   size={17}
                   className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"
