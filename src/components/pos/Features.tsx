@@ -1,11 +1,4 @@
-import {
-  Zap,
-  Boxes,
-  Wallet,
-  BarChart3,
-  Receipt,
-  Users,
-} from 'lucide-react';
+import { Zap, Boxes, Wallet, BarChart3, Receipt, Users } from 'lucide-react';
 import { motion } from 'motion/react';
 
 const FEATURES = [
@@ -37,27 +30,31 @@ const FEATURES = [
   {
     icon: Users,
     title: 'Roles con restricciones',
-    desc: 'Dueño, Encargado y Cajero. El menú lateral se adapta solo al rol del usuario logueado — un cajero ni siquiera ve la opción de Reportes.',
+    desc: 'Dueño, Encargado y Cajero. El menú lateral se adapta solo al rol del usuario logueado: un cajero ni siquiera ve la opción de Reportes.',
   },
 ];
 
 export default function Features() {
   return (
-    <section id="features" className="py-16 md:py-28 px-5 md:px-6 bg-ice">
+    <section id="features" className="py-16 md:py-28 px-6 border-t border-white/10">
       <div className="max-w-6xl mx-auto">
         <div className="max-w-3xl mb-10 md:mb-16">
-          <p className="eyebrow text-blue mb-4">— 02 / Características</p>
-          <h2 className="font-display font-bold text-4xl md:text-6xl text-navy leading-[1.05] mb-5 tracking-tight">
-            Todo lo que necesitás<br />
+          <p className="inline-flex items-center gap-2 text-xs font-medium text-white/60 mb-4">
+            <span className="w-1.5 h-1.5 rounded-full bg-white" />
+            02 / Características
+          </p>
+          <h2 className="text-4xl md:text-6xl font-semibold text-white leading-[1.05] mb-5 tracking-tight">
+            Todo lo que necesitás
+            <br />
             para vender ordenado.
           </h2>
-          <p className="text-lg text-slate">
+          <p className="text-lg text-white/60">
             Cada módulo está pensado para que dejes de pelearte con cuadernos,
             planillas de Excel y decisiones a ojo.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-px bg-line border border-line rounded-2xl overflow-hidden">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
           {FEATURES.map(({ icon: Icon, title, desc }, i) => (
             <motion.div
               key={title}
@@ -65,19 +62,14 @@ export default function Features() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-60px' }}
               transition={{ duration: 0.45, delay: i * 0.06, ease: 'easeOut' }}
-              className="bg-white p-7 hover:bg-ice/40 transition group"
+              whileHover={{ y: -5 }}
+              className="liquid-glass rounded-2xl p-7 group"
             >
-              <motion.div
-                whileHover={{ scale: 1.08, rotate: -5 }}
-                transition={{ type: 'spring', stiffness: 300 }}
-                className="w-11 h-11 rounded-xl bg-ice flex items-center justify-center mb-5"
-              >
-                <Icon size={22} className="text-blue" />
-              </motion.div>
-              <h3 className="font-display font-bold text-lg text-navy mb-2 tracking-tight">
-                {title}
-              </h3>
-              <p className="text-slate text-sm leading-relaxed">{desc}</p>
+              <div className="w-11 h-11 rounded-xl bg-white/8 flex items-center justify-center mb-5 text-[#A4F4FD] group-hover:bg-white group-hover:text-black transition">
+                <Icon size={22} />
+              </div>
+              <h3 className="text-lg text-white font-semibold mb-2 tracking-tight">{title}</h3>
+              <p className="text-white/56 text-sm leading-relaxed">{desc}</p>
             </motion.div>
           ))}
         </div>

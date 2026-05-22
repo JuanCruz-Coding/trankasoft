@@ -33,7 +33,7 @@ export default function Contact() {
         setStatus('error');
         setErrorMsg(data.message || 'No pudimos enviar el mensaje.');
       }
-    } catch (err) {
+    } catch {
       setStatus('error');
       setErrorMsg('Hubo un problema de conexión. Probá de nuevo.');
     }

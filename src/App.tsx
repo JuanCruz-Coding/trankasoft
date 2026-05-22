@@ -7,6 +7,8 @@ import Portal from './pages/Portal';
 import NotFound from './pages/NotFound';
 
 const LOADER_DURATION = 2200;
+const LOADER_READY_FALLBACK = 900;
+const LOADER_HARD_CAP = 3600;
 
 const router = createBrowserRouter([
   {
@@ -23,6 +25,15 @@ const router = createBrowserRouter([
 export default function App() {
   const [isLoading, setIsLoading] = useState(true);
   const [isLoaderReady, setIsLoaderReady] = useState(false);
+
+  useEffect(() => {
+    const fallback = window.setTimeout(() => setIsLoaderReady(true), LOADER_READY_FALLBACK);
+    const hardCap = window.setTimeout(() => setIsLoading(false), LOADER_HARD_CAP);
+    return () => {
+      window.clearTimeout(fallback);
+      window.clearTimeout(hardCap);
+    };
+  }, []);
 
   useEffect(() => {
     if (!isLoaderReady) return undefined;

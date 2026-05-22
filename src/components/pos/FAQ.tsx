@@ -1,7 +1,7 @@
 const FAQS = [
   {
     q: '¿Necesito instalar algo?',
-    a: 'No. TrankaPOS funciona en cualquier navegador moderno (Chrome, Edge, Safari, Firefox). También podés instalarlo como app desde el navegador para que aparezca en la pantalla de inicio del dispositivo.',
+    a: 'No. TrankaPOS funciona en cualquier navegador moderno. También podés instalarlo como app desde el navegador para que aparezca en la pantalla de inicio del dispositivo.',
   },
   {
     q: '¿Funciona sin internet?',
@@ -21,43 +21,44 @@ const FAQS = [
   },
   {
     q: '¿Sirve para mi rubro?',
-    a: 'Está pensado para kioscos, despensas, almacenes y minimarkets. Si vendés productos con código de barras, manejás stock y necesitás controlar caja, te sirve. No incluye módulo de comandas para gastronomía ni integración con AFIP (todavía).',
+    a: 'Está pensado para kioscos, despensas, almacenes y minimarkets. Si vendés productos con código de barras, manejás stock y necesitás controlar caja, te sirve.',
   },
   {
     q: '¿Hace facturación electrónica con AFIP?',
-    a: 'Todavía no — está en nuestro roadmap. Hoy TrankaPOS te sirve para vender, controlar stock y caja. La factura formal la seguís emitiendo por el medio que ya uses.',
+    a: 'Todavía no. Está en nuestro roadmap. Hoy TrankaPOS te sirve para vender, controlar stock y caja. La factura formal la seguís emitiendo por el medio que ya uses.',
   },
   {
     q: '¿Qué hardware soporta?',
-    a: 'Lectores de código de barras USB o Bluetooth (cualquiera que se comporte como teclado), e impresoras térmicas ESC/POS reconocidas por tu SO. Balanzas, cajón de dinero y posnet físico están en roadmap.',
+    a: 'Lectores de código de barras USB o Bluetooth e impresoras térmicas ESC/POS reconocidas por tu sistema operativo. Balanzas, cajón de dinero y posnet físico están en roadmap.',
   },
 ];
 
 export default function FAQ() {
   return (
-    <section id="faq" className="py-16 md:py-28 px-5 md:px-6 bg-white">
+    <section id="faq" className="py-16 md:py-28 px-6 border-t border-white/10">
       <div className="max-w-3xl mx-auto">
         <div className="mb-12">
-          <p className="eyebrow text-blue mb-4">— 06 / Preguntas frecuentes</p>
-          <h2 className="font-display font-bold text-4xl md:text-6xl text-navy leading-[1.05] tracking-tight">
-            Lo que más<br />
+          <p className="inline-flex items-center gap-2 text-xs font-medium text-white/60 mb-4">
+            <span className="w-1.5 h-1.5 rounded-full bg-white" />
+            06 / Preguntas frecuentes
+          </p>
+          <h2 className="text-4xl md:text-6xl font-semibold text-white leading-[1.05] tracking-tight">
+            Lo que más
+            <br />
             nos preguntan.
           </h2>
         </div>
 
-        <div className="divide-y divide-line border-y border-line">
+        <div className="liquid-glass rounded-3xl px-5 md:px-7">
           {FAQS.map(({ q, a }) => (
-            <details
-              key={q}
-              className="group py-5"
-            >
-              <summary className="font-display font-semibold text-navy cursor-pointer list-none flex items-center justify-between gap-4 text-base md:text-lg tracking-tight">
+            <details key={q} className="group border-b border-white/10 py-5 last:border-b-0">
+              <summary className="font-semibold text-white cursor-pointer list-none flex items-center justify-between gap-4 text-base md:text-lg tracking-tight">
                 <span>{q}</span>
-                <span className="text-blue text-2xl group-open:rotate-45 transition-transform shrink-0">
+                <span className="text-[#A4F4FD] text-2xl group-open:rotate-45 transition-transform shrink-0">
                   +
                 </span>
               </summary>
-              <p className="text-slate text-base mt-3 leading-relaxed pr-10">{a}</p>
+              <p className="text-white/58 text-base mt-3 leading-relaxed pr-10">{a}</p>
             </details>
           ))}
         </div>
