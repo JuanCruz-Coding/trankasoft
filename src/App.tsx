@@ -6,9 +6,7 @@ import Pos from './pages/Pos';
 import Portal from './pages/Portal';
 import NotFound from './pages/NotFound';
 
-const LOADER_DURATION = 2200;
-const LOADER_READY_FALLBACK = 900;
-const LOADER_HARD_CAP = 3600;
+const LOADER_DURATION = 2400;
 
 const router = createBrowserRouter([
   {
@@ -24,46 +22,42 @@ const router = createBrowserRouter([
 
 export default function App() {
   const [isLoading, setIsLoading] = useState(true);
-  const [isLoaderReady, setIsLoaderReady] = useState(false);
 
   useEffect(() => {
-    const fallback = window.setTimeout(() => setIsLoaderReady(true), LOADER_READY_FALLBACK);
-    const hardCap = window.setTimeout(() => setIsLoading(false), LOADER_HARD_CAP);
-    return () => {
-      window.clearTimeout(fallback);
-      window.clearTimeout(hardCap);
-    };
-  }, []);
-
-  useEffect(() => {
-    if (!isLoaderReady) return undefined;
-
     const timer = window.setTimeout(() => setIsLoading(false), LOADER_DURATION);
     return () => window.clearTimeout(timer);
-  }, [isLoaderReady]);
+  }, []);
 
   return (
     <>
       <RouterProvider router={router} />
 
       <div
-        className={`app-loader ${isLoading ? 'is-visible' : 'is-hidden'} ${
-          isLoaderReady ? 'is-ready' : ''
-        }`}
+        className={`app-loader ${isLoading ? 'is-visible' : 'is-hidden'}`}
         aria-hidden={!isLoading}
       >
         <div className="app-loader__panel">
-          <img
-            src="/brand/loader-trankasoft.gif"
-            alt="TrankaSoft"
-            className="app-loader__mark"
-            onLoad={() => setIsLoaderReady(true)}
-            onError={() => setIsLoaderReady(true)}
-          />
+          <div className="app-loader__rings" aria-hidden="true">
+            <span className="app-loader__ring app-loader__ring--outer" />
+            <span className="app-loader__ring app-loader__ring--inner" />
+          </div>
+          <div className="app-loader__brand" aria-label="TrankaSoft">
+            <span className="app-loader__name">TrankaSoft</span>
+            <img
+              src="/brand/isotipo.png"
+              alt=""
+              aria-hidden="true"
+              className="app-loader__logo"
+            />
+          </div>
           <div className="app-loader__progress" aria-hidden="true">
             <span />
           </div>
-          <p className="app-loader__text">Cargando experiencia digital</p>
+          <p className="app-loader__text">Preparando experiencia digital</p>
+          <div className="app-loader__status" aria-hidden="true">
+            <span>Software con calma</span>
+            <span>Cloud ready</span>
+          </div>
         </div>
       </div>
     </>
