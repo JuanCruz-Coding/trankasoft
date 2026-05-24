@@ -5,50 +5,71 @@ const POS_URL = 'https://pos.trankasoft.com';
 
 const PLANS = [
   {
-    code: 'free',
+    code: 'trial',
     name: 'Free Trial',
     price: '$0',
     period: '14 días',
-    desc: 'Probá todo Pro sin tarjeta.',
-    features: ['1 sucursal', 'Hasta 2 usuarios', 'Hasta 100 productos', 'Todas las funciones de Pro'],
+    desc: 'Probá Comercio completo, sin tarjeta.',
+    features: [
+      '1 sucursal · 1 depósito',
+      'Hasta 3 usuarios',
+      'Hasta 1.500 productos',
+      'Todas las funciones de Comercio prendidas',
+    ],
     cta: 'Empezar gratis',
     highlight: false,
   },
   {
-    code: 'basic',
-    name: 'Básico',
-    price: '$40.000',
+    code: 'kiosco',
+    name: 'Kiosco',
+    price: '$30.000',
     period: '/mes',
-    desc: 'Para arrancar con un comercio.',
-    features: ['1 sucursal', 'Hasta 2 usuarios', 'Productos ilimitados', 'Caja, ventas, stock', 'Reportes básicos'],
-    cta: 'Elegir Básico',
+    desc: 'POS, caja y stock para arrancar.',
+    features: [
+      '1 sucursal · 1 depósito',
+      'Hasta 3 usuarios',
+      'Hasta 1.500 productos',
+      'Factura electrónica AFIP + contingencia',
+      'Mercado Pago QR + scanner por cámara',
+      'Cola offline (vendés sin internet)',
+    ],
+    cta: 'Elegir Kiosco',
     highlight: false,
   },
   {
-    code: 'pro',
-    name: 'Pro',
-    price: '$100.000',
+    code: 'comercio',
+    name: 'Comercio',
+    price: '$70.000',
     period: '/mes',
-    desc: 'El más elegido por kiosqueros con varias sucursales.',
+    desc: 'El más elegido por retail medio.',
     features: [
-      'Hasta 3 sucursales',
-      'Hasta 10 usuarios',
+      '2 sucursales · 2 depósitos por sucursal',
+      'Hasta 8 usuarios',
       'Productos ilimitados',
-      'Transferencias entre sucursales',
-      'Reportes avanzados + CSV',
-      'Soporte prioritario',
+      'Cuenta corriente + Aging',
+      'Combos / kits + Variantes (talle, color)',
+      'Listas de precios + Promociones',
+      'Pedidos y despachos retail',
+      'Devoluciones + Grupos de clientes',
     ],
-    cta: 'Elegir Pro',
+    cta: 'Elegir Comercio',
     highlight: true,
   },
   {
-    code: 'business',
-    name: 'Empresa',
-    price: '$240.000',
+    code: 'cadena',
+    name: 'Cadena',
+    price: '$150.000',
     period: '/mes',
-    desc: 'Para cadenas y operaciones grandes.',
-    features: ['Sucursales ilimitadas', 'Usuarios ilimitados', 'Productos ilimitados', 'API para integraciones', 'SLA y onboarding dedicado'],
-    cta: 'Elegir Empresa',
+    desc: 'Para operar varias sucursales en serio.',
+    features: [
+      '8 sucursales · 3 depósitos por sucursal',
+      'Hasta 25 usuarios',
+      'Transferencias + Depósito central',
+      'Reportes avanzados + Export CSV',
+      'Permisos granulares + Auditoría',
+      'API + Webhooks + Branding propio',
+    ],
+    cta: 'Elegir Cadena',
     highlight: false,
   },
 ];
@@ -137,6 +158,8 @@ export default function Pricing() {
 
         <p className="text-center text-sm text-white/45 mt-12">
           Precios en pesos argentinos. IVA incluido. Pago mensual con Mercado Pago.
+          <br />
+          ¿Más de 8 sucursales o necesidades específicas? Hablemos: contacto@trankasoft.com
         </p>
       </div>
     </section>
