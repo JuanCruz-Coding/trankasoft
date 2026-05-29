@@ -76,25 +76,23 @@ const PLANS = [
 
 export default function Pricing() {
   return (
-    <section id="planes" className="py-16 md:py-28 px-6 border-t border-white/10">
-      <div className="max-w-6xl mx-auto">
-        <div className="text-center max-w-3xl mx-auto mb-10 md:mb-16">
-          <p className="inline-flex items-center gap-2 text-xs font-medium text-white/60 mb-4">
-            <span className="w-1.5 h-1.5 rounded-full bg-white" />
+    <section id="planes" className="border-b border-line bg-ice/40 px-6 py-16 md:py-28">
+      <div className="mx-auto max-w-6xl">
+        <div className="mx-auto mb-10 max-w-3xl text-center md:mb-16">
+          <p className="mb-4 inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.16em] text-blue">
+            <span className="h-px w-8 bg-blue/50" />
             05 / Planes
           </p>
-          <h2 className="text-4xl md:text-6xl font-semibold text-white leading-[1.05] mb-5 tracking-tight">
-            Simples,
-            <br />
-            <span className="text-[#A4F4FD]">sin sorpresas.</span>
+          <h2 className="mb-5 text-4xl font-bold leading-[1.05] tracking-tight text-navy md:text-6xl">
+            Simples, <span className="brand-gradient-text">sin sorpresas.</span>
           </h2>
-          <p className="text-lg text-white/60">
-            Pagás mes a mes. Cancelás cuando quieras. Sin contrato, sin instalación,
-            sin costo de implementación.
+          <p className="text-lg text-slate">
+            Pagás mes a mes. Cancelás cuando quieras. Sin contrato, sin instalación, sin costo de
+            implementación.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div className="grid items-start gap-4 md:grid-cols-2 lg:grid-cols-4">
           {PLANS.map((plan, i) => (
             <motion.div
               key={plan.code}
@@ -102,41 +100,32 @@ export default function Pricing() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-80px' }}
               transition={{ duration: 0.5, delay: i * 0.08, ease: 'easeOut' }}
-              whileHover={{ y: plan.highlight ? -8 : -4 }}
-              className={`relative rounded-3xl p-7 flex flex-col ${
+              className={`relative flex flex-col rounded-3xl p-7 ${
                 plan.highlight
-                  ? 'bg-white text-black shadow-2xl shadow-[#00d2ff]/15'
-                  : 'liquid-glass text-white'
+                  ? 'border-2 border-blue bg-white shadow-2xl shadow-blue/15'
+                  : 'border border-line bg-white shadow-sm'
               }`}
             >
               {plan.highlight && (
-                <span className="absolute -top-3 left-7 bg-[#00d2ff] text-black text-[10px] font-bold uppercase tracking-[0.15em] px-2.5 py-1 rounded-full">
+                <span className="absolute -top-3 left-7 rounded-full bg-blue px-2.5 py-1 text-[10px] font-bold uppercase tracking-[0.15em] text-white">
                   Más elegido
                 </span>
               )}
 
-              <h3 className="text-xl font-semibold mb-1 tracking-tight">{plan.name}</h3>
-              <p className={`text-sm mb-6 ${plan.highlight ? 'text-black/58' : 'text-white/52'}`}>
-                {plan.desc}
-              </p>
+              <h3 className="mb-1 text-xl font-bold tracking-tight text-navy">{plan.name}</h3>
+              <p className="mb-6 text-sm text-slate">{plan.desc}</p>
 
               <div className="mb-6">
-                <span className="text-4xl font-semibold tracking-tight">{plan.price}</span>
-                <span className={`text-sm ml-1 ${plan.highlight ? 'text-black/55' : 'text-white/48'}`}>
-                  {plan.period}
-                </span>
+                <span className="text-4xl font-bold tracking-tight text-navy">{plan.price}</span>
+                <span className="ml-1 text-sm text-slate">{plan.period}</span>
               </div>
 
-              <ul className="space-y-2.5 mb-8 flex-1">
+              <ul className="mb-8 flex-1 space-y-2.5">
                 {plan.features.map((feature) => (
-                  <li
-                    key={feature}
-                    className={`flex items-start gap-2 text-sm ${plan.highlight ? 'text-black/78' : 'text-white/72'}`}
-                  >
-                    <Check
-                      size={15}
-                      className={`mt-0.5 shrink-0 ${plan.highlight ? 'text-black' : 'text-[#A4F4FD]'}`}
-                    />
+                  <li key={feature} className="flex items-start gap-2 text-sm text-navy">
+                    <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-blue/10 text-blue">
+                      <Check size={12} strokeWidth={3} />
+                    </span>
                     <span>{feature}</span>
                   </li>
                 ))}
@@ -144,10 +133,10 @@ export default function Pricing() {
 
               <a
                 href={`${POS_URL}/signup`}
-                className={`text-center font-semibold px-4 py-3 rounded-full transition ${
+                className={`rounded-lg px-4 py-3 text-center text-sm font-semibold transition ${
                   plan.highlight
-                    ? 'bg-black text-white hover:bg-[#111]'
-                    : 'bg-white text-black hover:bg-white/90'
+                    ? 'bg-blue text-white shadow-lg shadow-blue/25 hover:bg-blue-dark'
+                    : 'border border-line text-navy hover:border-blue/40 hover:bg-ice'
                 }`}
               >
                 {plan.cta}
@@ -156,7 +145,7 @@ export default function Pricing() {
           ))}
         </div>
 
-        <p className="text-center text-sm text-white/45 mt-12">
+        <p className="mt-12 text-center text-sm text-slate">
           Precios en pesos argentinos. IVA incluido. Pago mensual con Mercado Pago.
           <br />
           ¿Más de 8 sucursales o necesidades específicas? Hablemos: contacto@trankasoft.com

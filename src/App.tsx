@@ -6,9 +6,7 @@ import Pos from './pages/Pos';
 import Portal from './pages/Portal';
 import NotFound from './pages/NotFound';
 
-const LOADER_DURATION = 2400;
-const LOADER_VIDEO_URL =
-  'https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260508_064122_c4750c0e-7476-4b44-94a2-a85a65c63bf2.mp4';
+const LOADER_DURATION = 1300;
 
 const router = createBrowserRouter([
   {
@@ -38,9 +36,6 @@ export default function App() {
         className={`app-loader ${isLoading ? 'is-visible' : 'is-hidden'}`}
         aria-hidden={!isLoading}
       >
-        <div className="app-loader__media" aria-hidden="true">
-          <video autoPlay loop muted playsInline src={LOADER_VIDEO_URL} />
-        </div>
         <div className="app-loader__shade" aria-hidden="true" />
         <div className="app-loader__panel">
           <div className="app-loader__rings" aria-hidden="true">
@@ -50,7 +45,7 @@ export default function App() {
           <div className="app-loader__brand" aria-label="TrankaSoft">
             <span className="app-loader__name">TrankaSoft</span>
             <img
-              src="/brand/loader-trankasoft.gif"
+              src="/brand/isotipo.png"
               alt=""
               aria-hidden="true"
               className="app-loader__gif"

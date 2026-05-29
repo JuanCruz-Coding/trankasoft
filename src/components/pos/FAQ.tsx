@@ -25,7 +25,7 @@ const FAQS = [
   },
   {
     q: '¿Hace facturación electrónica con AFIP?',
-    a: 'Todavía no. Está en nuestro roadmap. Hoy TrankaPOS te sirve para vender, controlar stock y caja. La factura formal la seguís emitiendo por el medio que ya uses.',
+    a: 'Sí. TrankaPOS emite comprobantes electrónicos contra AFIP desde el plan Kiosco, con modo de contingencia si el servicio de AFIP se cae. Cuando un comprobante queda pendiente, lo reintentás en un click desde la pantalla de ventas.',
   },
   {
     q: '¿Qué hardware soporta?',
@@ -35,30 +35,30 @@ const FAQS = [
 
 export default function FAQ() {
   return (
-    <section id="faq" className="py-16 md:py-28 px-6 border-t border-white/10">
-      <div className="max-w-3xl mx-auto">
+    <section id="faq" className="border-b border-line bg-white px-6 py-16 md:py-28">
+      <div className="mx-auto max-w-3xl">
         <div className="mb-12">
-          <p className="inline-flex items-center gap-2 text-xs font-medium text-white/60 mb-4">
-            <span className="w-1.5 h-1.5 rounded-full bg-white" />
+          <p className="mb-4 inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.16em] text-blue">
+            <span className="h-px w-8 bg-blue/50" />
             06 / Preguntas frecuentes
           </p>
-          <h2 className="text-4xl md:text-6xl font-semibold text-white leading-[1.05] tracking-tight">
+          <h2 className="text-4xl font-bold leading-[1.05] tracking-tight text-navy md:text-6xl">
             Lo que más
             <br />
             nos preguntan.
           </h2>
         </div>
 
-        <div className="liquid-glass rounded-3xl px-5 md:px-7">
+        <div className="rounded-3xl border border-line bg-white px-5 shadow-sm md:px-7">
           {FAQS.map(({ q, a }) => (
-            <details key={q} className="group border-b border-white/10 py-5 last:border-b-0">
-              <summary className="font-semibold text-white cursor-pointer list-none flex items-center justify-between gap-4 text-base md:text-lg tracking-tight">
+            <details key={q} className="group border-b border-line py-5 last:border-b-0">
+              <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-base font-semibold tracking-tight text-navy md:text-lg">
                 <span>{q}</span>
-                <span className="text-[#A4F4FD] text-2xl group-open:rotate-45 transition-transform shrink-0">
+                <span className="shrink-0 text-2xl text-blue transition-transform group-open:rotate-45">
                   +
                 </span>
               </summary>
-              <p className="text-white/58 text-base mt-3 leading-relaxed pr-10">{a}</p>
+              <p className="mt-3 pr-10 text-base leading-relaxed text-slate">{a}</p>
             </details>
           ))}
         </div>

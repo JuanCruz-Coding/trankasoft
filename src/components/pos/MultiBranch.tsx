@@ -21,31 +21,37 @@ const POINTS = [
 
 export default function MultiBranch() {
   return (
-    <section id="multi-sucursal" className="relative overflow-hidden border-t border-white/10 px-6 py-16 md:py-28">
+    <section
+      id="multi-sucursal"
+      className="relative overflow-hidden border-b border-line bg-ice/40 px-6 py-16 md:py-28"
+    >
       <div
-        className="absolute inset-0 bg-[radial-gradient(720px_circle_at_76%_35%,rgba(0,210,255,0.16),transparent_64%)]"
+        className="absolute inset-0"
+        style={{
+          background:
+            'radial-gradient(720px circle at 76% 35%, rgba(63,169,255,0.12), transparent 64%)',
+        }}
         aria-hidden="true"
       />
 
-      <div className="relative max-w-6xl mx-auto">
-        <div className="max-w-3xl mb-14">
-          <p className="inline-flex items-center gap-2 text-xs font-medium text-white/60 mb-4">
-            <span className="w-1.5 h-1.5 rounded-full bg-white" />
+      <div className="relative mx-auto max-w-6xl">
+        <div className="mb-14 max-w-3xl">
+          <p className="mb-4 inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.16em] text-blue">
+            <span className="h-px w-8 bg-blue/50" />
             03 / Multi-sucursal en serio
           </p>
-          <h2 className="text-4xl md:text-6xl font-semibold leading-[1.05] mb-6 tracking-tight">
+          <h2 className="mb-6 text-4xl font-bold leading-[1.05] tracking-tight text-navy md:text-6xl">
             Multi-sucursal
             <br />
-            <span className="text-[#A4F4FD]">desde el día uno.</span>
+            <span className="brand-gradient-text">desde el día uno.</span>
           </h2>
-          <p className="text-lg text-white/62 max-w-2xl">
-            La mayoría de los POS te cobran por sucursal como si fuera un upgrade
-            premium. En TrankaPOS, manejar 1 o 3 puntos de venta es lo mismo: está
-            incluido desde el plan Pro.
+          <p className="max-w-2xl text-lg text-slate">
+            La mayoría de los POS te cobran por sucursal como si fuera un upgrade premium. En
+            TrankaPOS, manejar 1 o 3 puntos de venta es lo mismo: está incluido desde el plan Pro.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-4">
+        <div className="grid gap-4 md:grid-cols-3">
           {POINTS.map(({ icon: Icon, title, desc }, i) => (
             <motion.div
               key={title}
@@ -53,12 +59,13 @@ export default function MultiBranch() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-80px' }}
               transition={{ duration: 0.55, delay: i * 0.12, ease: 'easeOut' }}
-              whileHover={{ y: -4 }}
-              className="liquid-glass rounded-2xl p-6"
+              className="rounded-2xl border border-line bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:border-blue/30 hover:shadow-xl hover:shadow-navy/5"
             >
-              <Icon size={28} className="text-[#A4F4FD] mb-4" />
-              <h3 className="text-xl font-semibold mb-2 tracking-tight">{title}</h3>
-              <p className="text-white/58 text-sm leading-relaxed">{desc}</p>
+              <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-xl bg-blue/10 text-blue">
+                <Icon size={24} />
+              </div>
+              <h3 className="mb-2 text-xl font-bold tracking-tight text-navy">{title}</h3>
+              <p className="text-sm leading-relaxed text-slate">{desc}</p>
             </motion.div>
           ))}
         </div>

@@ -29,21 +29,21 @@ const PAINS = [
 
 export default function PainPoints() {
   return (
-    <section className="py-16 md:py-28 px-6 border-t border-white/10">
-      <div className="max-w-6xl mx-auto">
-        <div className="max-w-3xl mb-10 md:mb-16">
-          <p className="inline-flex items-center gap-2 text-xs font-medium text-white/60 mb-4">
-            <span className="w-1.5 h-1.5 rounded-full bg-white" />
+    <section className="border-b border-line bg-ice/40 px-6 py-16 md:py-28">
+      <div className="mx-auto max-w-6xl">
+        <div className="mb-10 max-w-3xl md:mb-16">
+          <p className="mb-4 inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.16em] text-blue">
+            <span className="h-px w-8 bg-blue/50" />
             01 / Por qué TrankaPOS
           </p>
-          <h2 className="text-4xl md:text-6xl font-semibold text-white leading-[1.05] tracking-tight">
+          <h2 className="text-4xl font-bold leading-[1.05] tracking-tight text-navy md:text-6xl">
             Lo que escuchamos.
             <br />
-            Lo que <span className="text-[#A4F4FD]">resolvemos.</span>
+            Lo que <span className="brand-gradient-text">resolvemos.</span>
           </h2>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-4">
+        <div className="grid gap-4 md:grid-cols-2">
           {PAINS.map(({ pain, solution }, i) => (
             <motion.div
               key={pain}
@@ -51,10 +51,10 @@ export default function PainPoints() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-60px' }}
               transition={{ duration: 0.5, delay: i * 0.06, ease: 'easeOut' }}
-              className="liquid-glass rounded-2xl p-6"
+              className="rounded-2xl border border-line bg-white p-6 shadow-sm"
             >
-              <p className="text-xl text-white mb-3 italic font-semibold tracking-tight">{pain}</p>
-              <p className="text-white/58 text-sm leading-relaxed">{solution}</p>
+              <p className="mb-3 text-xl font-semibold italic tracking-tight text-navy">{pain}</p>
+              <p className="text-sm leading-relaxed text-slate">{solution}</p>
             </motion.div>
           ))}
         </div>
