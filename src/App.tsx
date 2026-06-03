@@ -4,6 +4,9 @@ import Layout from './components/Layout';
 import Home from './pages/Home';
 import Pos from './pages/Pos';
 import Portal from './pages/Portal';
+import Nosotros from './pages/Nosotros';
+import Privacidad from './pages/Privacidad';
+import Terminos from './pages/Terminos';
 import NotFound from './pages/NotFound';
 
 const LOADER_DURATION = 1300;
@@ -15,6 +18,9 @@ const router = createBrowserRouter([
       { path: '/', element: <Home /> },
       { path: '/pos', element: <Pos /> },
       { path: '/portal', element: <Portal /> },
+      { path: '/nosotros', element: <Nosotros /> },
+      { path: '/privacidad', element: <Privacidad /> },
+      { path: '/terminos', element: <Terminos /> },
       { path: '*', element: <NotFound /> },
     ],
   },

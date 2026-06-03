@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom';
 import { Mail, Phone } from 'lucide-react';
 
-const POS_URL = 'https://pos.trankasoft.com';
 const YEAR = new Date().getFullYear();
 
 export default function Footer() {
@@ -44,14 +43,19 @@ export default function Footer() {
             <h4 className="eyebrow mb-4 text-blue">Empresa</h4>
             <ul className="space-y-2.5 text-sm">
               <li>
-                <a href={`${POS_URL}/terms`} className="text-slate transition hover:text-navy">
-                  Términos
-                </a>
+                <Link to="/nosotros" className="text-slate transition hover:text-navy">
+                  Nosotros
+                </Link>
               </li>
               <li>
-                <a href={`${POS_URL}/privacy`} className="text-slate transition hover:text-navy">
+                <Link to="/terminos" className="text-slate transition hover:text-navy">
+                  Términos
+                </Link>
+              </li>
+              <li>
+                <Link to="/privacidad" className="text-slate transition hover:text-navy">
                   Privacidad
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
