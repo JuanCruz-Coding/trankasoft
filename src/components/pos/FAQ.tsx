@@ -5,7 +5,7 @@ const FAQS = [
   },
   {
     q: '¿Funciona sin internet?',
-    a: 'Necesita internet para sincronizar stock, ventas y caja entre sucursales. La venta sin internet con sincronización diferida está en nuestro roadmap.',
+    a: 'Sí. Desde el plan Kiosco, la cola offline te deja seguir vendiendo si se corta la conexión: las ventas quedan guardadas en el dispositivo y se sincronizan solas cuando vuelve internet.',
   },
   {
     q: '¿Cómo se cobra?',
@@ -21,7 +21,7 @@ const FAQS = [
   },
   {
     q: '¿Sirve para mi rubro?',
-    a: 'Está pensado para kioscos, despensas, almacenes y minimarkets. Si vendés productos con código de barras, manejás stock y necesitás controlar caja, te sirve.',
+    a: 'Está pensado para comercios retail: indumentaria, calzado, electro, ferretería, librería y perfumería, y también kioscos, despensas y minimarkets. Si vendés productos, manejás stock y necesitás controlar caja, te sirve.',
   },
   {
     q: '¿Hace facturación electrónica con AFIP?',

@@ -3,7 +3,20 @@ import { motion } from 'motion/react';
 
 const POS_URL = 'https://pos.trankasoft.com';
 
-const PLANS = [
+interface Plan {
+  code: string;
+  name: string;
+  price: string;
+  period: string;
+  desc: string;
+  features: string[];
+  cta: string;
+  /** Destino del CTA. Default: signup del POS. */
+  href?: string;
+  highlight: boolean;
+}
+
+const PLANS: Plan[] = [
   {
     code: 'trial',
     name: 'Free Trial',
@@ -62,7 +75,7 @@ const PLANS = [
     period: '/mes',
     desc: 'Para operar varias sucursales en serio.',
     features: [
-      '8 sucursales · 3 depósitos por sucursal',
+      '5 sucursales · 3 depósitos por sucursal',
       'Hasta 25 usuarios',
       'Transferencias + Depósito central',
       'Reportes avanzados + Export CSV',
@@ -70,6 +83,23 @@ const PLANS = [
       'API + Webhooks + Branding propio',
     ],
     cta: 'Elegir Cadena',
+    highlight: false,
+  },
+  {
+    code: 'custom',
+    name: 'A medida',
+    price: 'Hablemos',
+    period: '',
+    desc: 'Para cadenas grandes y necesidades específicas.',
+    features: [
+      'Más de 5 sucursales',
+      'Usuarios ilimitados',
+      'Integraciones a medida',
+      'Soporte dedicado',
+      'Onboarding asistido',
+    ],
+    cta: 'Contactanos',
+    href: 'mailto:ventas@trankasoft.com',
     highlight: false,
   },
 ];
@@ -92,7 +122,7 @@ export default function Pricing() {
           </p>
         </div>
 
-        <div className="grid items-start gap-4 md:grid-cols-2 lg:grid-cols-4">
+        <div className="grid items-start gap-4 md:grid-cols-2 lg:grid-cols-5">
           {PLANS.map((plan, i) => (
             <motion.div
               key={plan.code}
@@ -132,7 +162,7 @@ export default function Pricing() {
               </ul>
 
               <a
-                href={`${POS_URL}/signup`}
+                href={plan.href ?? `${POS_URL}/signup`}
                 className={`rounded-lg px-4 py-3 text-center text-sm font-semibold transition ${
                   plan.highlight
                     ? 'bg-blue text-white shadow-lg shadow-blue/25 hover:bg-blue-dark'
@@ -148,7 +178,7 @@ export default function Pricing() {
         <p className="mt-12 text-center text-sm text-slate">
           Precios en pesos argentinos. IVA incluido. Pago mensual con Mercado Pago.
           <br />
-          ¿Más de 8 sucursales o necesidades específicas? Hablemos: contacto@trankasoft.com
+          ¿Más de 5 sucursales o necesidades específicas? Hablemos: ventas@trankasoft.com
         </p>
       </div>
     </section>

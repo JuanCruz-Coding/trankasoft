@@ -11,7 +11,7 @@ const PAINS = [
   },
   {
     pain: '"Mi encargado puede borrar cosas que no debería."',
-    solution: 'Tres roles con restricciones automáticas. El menú se adapta al rol logueado.',
+    solution: 'Roles con permisos granulares y roles personalizados. El menú se adapta al rol logueado.',
   },
   {
     pain: '"Tengo dos sucursales y no sé qué tiene cada una."',
@@ -19,7 +19,7 @@ const PAINS = [
   },
   {
     pain: '"El sistema viejo me cobra una fortuna por sucursal."',
-    solution: 'Multi-sucursal incluido desde Pro. Sin costo extra por punto de venta.',
+    solution: 'Multi-sucursal incluido desde Comercio. Sin costo extra por punto de venta.',
   },
   {
     pain: '"Los chicos venden y no me entero."',

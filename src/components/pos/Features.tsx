@@ -1,36 +1,36 @@
-import { Zap, Boxes, Wallet, BarChart3, Receipt, Users } from 'lucide-react';
+import { Zap, Boxes, Wallet, BadgePercent, Shirt, PackageCheck } from 'lucide-react';
 import { motion } from 'motion/react';
 
 const FEATURES = [
   {
-    icon: Zap,
-    title: 'Velocidad al vender',
-    desc: 'Lector de código de barras con foco automático. Atajo F2 para activar el lector. F4 abre el modal de pago. Cobros combinados en múltiples medios de pago en una misma venta.',
+    icon: Shirt,
+    title: 'Variantes de producto',
+    desc: 'Talle y color para indumentaria y calzado. Cada variante con su stock y su código de barras. El POS pide la variante al escanear y el reporte discrimina qué se vende de verdad.',
   },
   {
-    icon: Boxes,
-    title: 'Stock en tiempo real',
-    desc: 'Cantidad disponible independiente por sucursal. Alertas visuales cuando un producto cae bajo el mínimo. Ajustes manuales con motivo registrado y trazabilidad completa.',
+    icon: BadgePercent,
+    title: 'Listas de precios y promos',
+    desc: 'Minorista, mayorista o mostrador: listas alternativas con asignación por cliente o grupo. Promociones automáticas de % off, NxM y envío gratis con vigencia programada.',
   },
   {
     icon: Wallet,
-    title: 'Caja con arqueo automático',
-    desc: 'Apertura con monto inicial. Ingresos y egresos intra-turno. Cierre que suma todo y calcula la diferencia con lo declarado. Una caja abierta por sucursal a la vez.',
+    title: 'Cuenta corriente',
+    desc: 'Fiado con límite de crédito por cliente, aging 30/60/90 días y recibos con imputación factura por factura. Sabés quién te debe, cuánto y hace cuánto.',
   },
   {
-    icon: BarChart3,
-    title: 'Reportes que sirven',
-    desc: 'Filtros por fecha, categoría y estado. Total facturado, ticket promedio, evolución diaria, distribución por medio de pago, ranking de cajeros y productos más vendidos.',
+    icon: PackageCheck,
+    title: 'Pedidos y despachos',
+    desc: 'El vendedor arma el pedido con anticipo, la cajera lo cobra y el depósito lo despacha: estados preparando / listo / entregado y remito A4 para la entrega.',
   },
   {
-    icon: Receipt,
-    title: 'Productos sin fricción',
-    desc: 'Catálogo con precio, costo, código de barras, IVA y categoría. Importación masiva por CSV con validación previa y reporte de errores línea por línea.',
+    icon: Zap,
+    title: 'Velocidad al vender',
+    desc: 'Lector de código de barras con foco automático, atajos F2/F4, cobros combinados en múltiples medios y datos del voucher Lapos (lote, cupón, autorización) para conciliar.',
   },
   {
-    icon: Users,
-    title: 'Roles con restricciones',
-    desc: 'Dueño, Encargado y Cajero. El menú lateral se adapta solo al rol del usuario logueado: un cajero ni siquiera ve la opción de Reportes.',
+    icon: Boxes,
+    title: 'Stock, caja y reportes',
+    desc: 'Stock en tiempo real por sucursal con alertas de mínimo, caja con arqueo automático al cierre y reportes de ticket promedio, ranking de productos y cajeros.',
   },
 ];
 

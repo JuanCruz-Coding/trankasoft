@@ -47,7 +47,8 @@ export default function MultiBranch() {
           </h2>
           <p className="max-w-2xl text-lg text-slate">
             La mayoría de los POS te cobran por sucursal como si fuera un upgrade premium. En
-            TrankaPOS, manejar 1 o 3 puntos de venta es lo mismo: está incluido desde el plan Pro.
+            TrankaPOS, manejar 1 o 3 puntos de venta es lo mismo: está incluido desde el plan
+            Comercio.
           </p>
         </div>
 

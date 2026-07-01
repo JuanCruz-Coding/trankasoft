@@ -57,7 +57,7 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
           className="text-4xl font-bold leading-[0.95] tracking-tight text-navy sm:text-5xl md:text-7xl"
         >
-          El POS que ordena tu kiosco <span className="brand-gradient-text">de verdad.</span>
+          El POS que ordena tu comercio <span className="brand-gradient-text">de verdad.</span>
         </motion.h1>
 
         <motion.p
@@ -66,8 +66,8 @@ export default function Hero() {
           transition={{ duration: 0.6, delay: 0.25, ease: 'easeOut' }}
           className="mx-auto mt-6 max-w-xl text-base leading-relaxed text-slate md:text-xl"
         >
-          Control real de stock, caja y ventas para comercios multi-sucursal. Sin instalación, sin
-          servidores y sin perder tiempo peleando con planillas.
+          Stock, caja, clientes y ventas bajo control para comercios retail y multi-sucursal. Sin
+          instalación, sin servidores y sin perder tiempo peleando con planillas.
         </motion.p>
 
         <motion.div
