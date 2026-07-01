@@ -111,7 +111,7 @@ export default function Pricing() {
         <div className="mx-auto mb-10 max-w-3xl text-center md:mb-16">
           <p className="mb-4 inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.16em] text-blue">
             <span className="h-px w-8 bg-blue/50" />
-            05 / Planes
+            06 / Planes
           </p>
           <h2 className="mb-5 text-4xl font-bold leading-[1.05] tracking-tight text-navy md:text-6xl">
             Simples, <span className="brand-gradient-text">sin sorpresas.</span>

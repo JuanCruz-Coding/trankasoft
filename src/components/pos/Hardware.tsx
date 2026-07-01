@@ -26,7 +26,7 @@ export default function Hardware() {
         <div className="mb-12 max-w-3xl">
           <p className="mb-4 inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.16em] text-blue">
             <span className="h-px w-8 bg-blue/50" />
-            04 / Hardware
+            05 / Hardware
           </p>
           <h2 className="text-3xl font-bold leading-[1.05] tracking-tight text-navy md:text-5xl">
             Lo único que necesitás

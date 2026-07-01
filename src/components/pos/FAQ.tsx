@@ -40,7 +40,7 @@ export default function FAQ() {
         <div className="mb-12">
           <p className="mb-4 inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.16em] text-blue">
             <span className="h-px w-8 bg-blue/50" />
-            06 / Preguntas frecuentes
+            07 / Preguntas frecuentes
           </p>
           <h2 className="text-4xl font-bold leading-[1.05] tracking-tight text-navy md:text-6xl">
             Lo que más

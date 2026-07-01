@@ -38,7 +38,7 @@ export default function MultiBranch() {
         <div className="mb-14 max-w-3xl">
           <p className="mb-4 inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.16em] text-blue">
             <span className="h-px w-8 bg-blue/50" />
-            03 / Multi-sucursal en serio
+            04 / Multi-sucursal en serio
           </p>
           <h2 className="mb-6 text-4xl font-bold leading-[1.05] tracking-tight text-navy md:text-6xl">
             Multi-sucursal

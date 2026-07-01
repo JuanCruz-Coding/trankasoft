@@ -1,6 +1,7 @@
 import Hero from '../components/pos/Hero';
 import PainPoints from '../components/pos/PainPoints';
 import Features from '../components/pos/Features';
+import Installments from '../components/pos/Installments';
 import MultiBranch from '../components/pos/MultiBranch';
 import Hardware from '../components/pos/Hardware';
 import Pricing from '../components/pos/Pricing';
@@ -13,6 +14,7 @@ export default function Pos() {
       <Hero />
       <PainPoints />
       <Features />
+      <Installments />
       <MultiBranch />
       <Hardware />
       <Pricing />
