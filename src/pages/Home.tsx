@@ -369,7 +369,7 @@ function PortfolioBand() {
       <div className="mx-auto max-w-6xl px-6">
         <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-14">
           <div>
-            <SectionEyebrow label="Portafolio · Cliente real" />
+            <SectionEyebrow label="Portafolio · Clientes reales" />
             <h2 className="mt-4 text-3xl font-bold leading-[1.1] tracking-tight text-navy md:text-5xl">
               Rosario Transmisiones, con una presencia digital más clara.
             </h2>
@@ -401,6 +401,42 @@ function PortfolioBand() {
               />
             </div>
           </motion.div>
+        </div>
+
+        <div className="mt-16 grid items-center gap-10 lg:grid-cols-2 lg:gap-14 md:mt-24">
+          <motion.div
+            initial={{ opacity: 0, y: 28 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: '-80px' }}
+            transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+            className="order-last overflow-hidden rounded-2xl border border-line bg-white p-2 shadow-xl shadow-navy/10 lg:order-first"
+          >
+            <div className="aspect-[16/10] overflow-hidden rounded-xl bg-ice">
+              <img
+                src="/portfolio/spacetraslados-mockup.png"
+                alt="Proyecto Space Traslados"
+                className="h-full w-full object-cover"
+                loading="lazy"
+              />
+            </div>
+          </motion.div>
+          <div>
+            <h2 className="mt-4 text-3xl font-bold leading-[1.1] tracking-tight text-navy md:text-5xl">
+              Space Traslados, de cero a una presencia digital completa.
+            </h2>
+            <p className="mt-5 text-base leading-relaxed text-slate">
+              Marca, sitio web y perfil de Google para una empresa de viajes grupales en combi de
+              Rosario: presupuestos por WhatsApp en un click y cobertura en todo el país.
+            </p>
+            <a
+              href="https://spacetraslados.com.ar"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-7 inline-flex items-center gap-2 rounded-lg border border-line bg-white px-5 py-3 text-sm font-semibold text-navy transition hover:border-blue/40 hover:bg-ice"
+            >
+              Ver proyecto <ArrowUpRight size={16} />
+            </a>
+          </div>
         </div>
       </div>
     </section>
