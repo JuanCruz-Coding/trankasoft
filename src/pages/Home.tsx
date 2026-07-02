@@ -395,7 +395,7 @@ function PortfolioBand() {
           >
             <div className="aspect-[16/10] overflow-hidden rounded-xl bg-ice">
               <img
-                src="/portfolio/rtransmisiones-mockup.png"
+                src="/portfolio/rtransmisiones-mockup.webp"
                 alt="Proyecto Rosario Transmisiones"
                 className="h-full w-full object-cover"
               />
@@ -413,7 +413,7 @@ function PortfolioBand() {
           >
             <div className="aspect-[16/10] overflow-hidden rounded-xl bg-ice">
               <img
-                src="/portfolio/spacetraslados-mockup.png"
+                src="/portfolio/spacetraslados-mockup.webp"
                 alt="Proyecto Space Traslados"
                 className="h-full w-full object-cover"
                 loading="lazy"
