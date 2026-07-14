@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { ArrowLeft } from 'lucide-react';
 
-const UPDATED = 'Junio de 2026';
+const UPDATED = 'Julio de 2026';
 
 export default function Privacidad() {
   return (
@@ -16,9 +16,11 @@ export default function Privacidad() {
           <div>
             <h2 className="mb-2 text-lg font-semibold text-navy">1. Responsable de los datos</h2>
             <p>
-              Esta política describe cómo TrankaSoft, compañía argentina de desarrollo de software
-              y marketing digital, trata la información personal de quienes utilizan este sitio y
-              nuestros servicios. Para cualquier consulta sobre privacidad podés escribirnos a{' '}
+              TrankaSoft es el nombre comercial de Juan Cruz Montagni, CUIT 20-37774857-4,
+              emprendimiento unipersonal argentino de desarrollo de software y marketing digital.
+              Esta política describe cómo tratamos la información personal de quienes utilizan este
+              sitio y nuestros servicios. Para cualquier consulta sobre privacidad podés escribirnos
+              a{' '}
               <a href="mailto:juancruzm@trankasoft.com" className="text-blue hover:underline">
                 juancruzm@trankasoft.com
               </a>
@@ -57,7 +59,29 @@ export default function Privacidad() {
           </div>
 
           <div>
-            <h2 className="mb-2 text-lg font-semibold text-navy">5. Cookies</h2>
+            <h2 className="mb-2 text-lg font-semibold text-navy">
+              5. Mensajería por WhatsApp (WhatsApp Business Platform)
+            </h2>
+            <p>
+              Algunos de nuestros productos permiten que un comercio conecte su propia cuenta de
+              WhatsApp Business para enviar a sus clientes notificaciones sobre los pedidos
+              (confirmación, preparación, envío y entrega). En ese escenario, el comercio es el
+              responsable de los datos de sus clientes y TrankaSoft actúa únicamente como proveedor
+              de tecnología que transmite los mensajes en su nombre.
+            </p>
+            <p className="mt-3">
+              Procesamos el número de teléfono del cliente final y el contenido de los mensajes con
+              el solo fin de entregar esas notificaciones. No los usamos para publicidad, no los
+              cedemos ni los vendemos a terceros, y no los empleamos para entrenar modelos. Los
+              mensajes se conservan mientras el comercio mantenga activa la integración y se
+              eliminan cuando la desconecta o cuando lo solicita. La transmisión se realiza a través
+              de la WhatsApp Business Platform de Meta, que trata los datos conforme a sus propias
+              políticas.
+            </p>
+          </div>
+
+          <div>
+            <h2 className="mb-2 text-lg font-semibold text-navy">6. Cookies</h2>
             <p>
               Usamos cookies propias y de terceros para el funcionamiento del sitio y la medición de
               su uso. Podés configurar tu navegador para rechazarlas, aunque algunas funciones
@@ -66,7 +90,7 @@ export default function Privacidad() {
           </div>
 
           <div>
-            <h2 className="mb-2 text-lg font-semibold text-navy">6. Tus derechos</h2>
+            <h2 className="mb-2 text-lg font-semibold text-navy">7. Tus derechos</h2>
             <p>
               De acuerdo con la Ley 25.326 de Protección de los Datos Personales de la República
               Argentina, podés solicitar el acceso, la rectificación, la actualización o la
@@ -79,7 +103,7 @@ export default function Privacidad() {
           </div>
 
           <div>
-            <h2 className="mb-2 text-lg font-semibold text-navy">7. Cambios en esta política</h2>
+            <h2 className="mb-2 text-lg font-semibold text-navy">8. Cambios en esta política</h2>
             <p>
               Podemos actualizar esta política para reflejar cambios en nuestros servicios o en la
               normativa aplicable. Publicaremos la versión vigente en esta misma página.
