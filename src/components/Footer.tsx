@@ -32,6 +32,16 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
+                <a
+                  href="https://ciboapp.com.ar"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-slate transition hover:text-navy"
+                >
+                  Cibo
+                </a>
+              </li>
+              <li>
                 <Link to="/portal" className="text-slate transition hover:text-navy">
                   TrankaPortal
                 </Link>

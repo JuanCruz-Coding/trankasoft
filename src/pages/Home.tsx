@@ -9,6 +9,7 @@ import {
   ShieldCheck,
   Store,
   Users,
+  UtensilsCrossed,
   Workflow,
   Zap,
 } from 'lucide-react';
@@ -102,7 +103,8 @@ function Hero() {
           className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-slate md:text-lg"
         >
           En TrankaSoft desarrollamos software a medida y productos propios como{' '}
-          <span className="font-semibold text-navy">TrankaPOS</span> para que controles{' '}
+          <span className="font-semibold text-navy">TrankaPOS</span> y{' '}
+          <span className="font-semibold text-navy">Cibo</span> para que controles{' '}
           <span className="font-semibold text-navy">ventas, stock y caja</span> en un solo lugar.
           Sin planillas sueltas, sin instalaciones.
         </motion.p>
@@ -223,6 +225,16 @@ const products = [
     internal: true,
   },
   {
+    icon: UtensilsCrossed,
+    name: 'Cibo',
+    desc: 'Pedidos online y gestión para gastronomía: menú digital, cocina en tiempo real, caja y avisos por WhatsApp al cliente.',
+    href: 'https://ciboapp.com.ar',
+    cta: 'Ver Cibo',
+    status: 'Disponible',
+    statusColor: 'text-emerald-600 bg-emerald-50 border-emerald-200',
+    internal: false,
+  },
+  {
     icon: Users,
     name: 'TrankaPortal',
     desc: 'Portal de RRHH para recibos, ausencias y comunicación interna de PyMEs. En desarrollo.',
@@ -258,7 +270,7 @@ function Products() {
           </p>
         </div>
 
-        <div className="mt-12 grid gap-5 md:grid-cols-3">
+        <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {products.map(({ icon: Icon, name, desc, href, cta, status, statusColor, internal }, i) => (
             <motion.div
               key={name}
@@ -290,6 +302,9 @@ function Products() {
               ) : (
                 <a
                   href={href}
+                  {...(href.startsWith('http')
+                    ? { target: '_blank', rel: 'noopener noreferrer' }
+                    : {})}
                   className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-blue transition group-hover:gap-2.5"
                 >
                   {cta} <ArrowUpRight size={16} />
